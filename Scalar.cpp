@@ -28,7 +28,7 @@ VarPtr Scalar::Copy()
 	return VarPtr(x);
 }
 
-int Scalar::NumElems()
+Scalar* Scalar::NumElems()
 {
 	return new Scalar(1);
 } 
@@ -52,7 +52,7 @@ VarPtr Scalar::Transpose()
 int& Scalar::operator[](int idx)
 {
 	if (idx != 1)
-		throw("INDEX_OUT_OF_RANGE");
+		throw(INDEX_OUT_OF_RANGE);
 	return Value_;
 }
 
@@ -82,11 +82,11 @@ VarPtr Scalar::operator+(const Scalar& s)
 }
 VarPtr Scalar::operator+(const Matrix& m)
 {
-	for (int i = 1; i < m + 1; i++)
+	for (int i = 1; i < m.Row_ + 1; i++)
 	{
-		for (int j = 1; j < cols + 1; j++)
+		for (int j = 1; j < m.cols + 1; j++)
 		{
-			m.matrix[i][j] += val;
+			m.matrix[i][j] += Value_;
 		}
 	}
 }
