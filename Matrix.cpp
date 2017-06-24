@@ -4,28 +4,27 @@
 Matrix ::Matrix(int rows, int cols, int val) :
 	Variable(), Row_(rows), Col_(cols)
 {
-	matrix_ = new IdxVec(rows);
-	for (int i = 1; i < rows + 1; i++)
+	matrix_ = new IdxVec(rows+1);
+	for (int i = 1; i <= rows + 1; i++)
 	{
-		matrix_[i] = new IdxVec(cols);
-		for (int j = 1; j < cols+1; j++)
+		matrix_[i] = new IdxVec(cols+1);
+		for (int j = 1; j <= cols+1; j++)
 		{
 			matrix_[i][j] = val;
 		}
 	}
 }
 
-
-
-//Matrix::Matrix(int startVal, int endVal) :
-//	Variable(), Row_(1), Col_(endVal - startVal+1)
-//{
-//	matrix_ = new IdxVec(Col_);
-//	for (int i = 1; i < Col_ + 1; i++)
-//	{
-//		matrix_[i] = startVal + i - 1;
-//	}
-//}
+Matrix::Matrix(int startVal, int endVal) :
+	Variable(), Row_(1), Col_(endVal - startVal+1)
+{
+	matrix_ = new IdxVec(2);
+	martix_[1] = new IdxVec(Col_+1);
+	for (int i = 1; i <= Col_ + 1; i++)
+	{
+		matrix_[1][j] = startVal + i - 1;
+	}
+}
 
 VarPtr Copy()
 {
@@ -33,7 +32,7 @@ VarPtr Copy()
 	return VarPtr(m);
 }
 
-int NumElems()
+Scalar* NumElems()
 {
 	return Scalar(Row_*Col_);
 }
@@ -83,7 +82,7 @@ int& operator[](IdxVec V)
 
 VarPtr operator+(const Variable&)
 {
-	return 0;
+	return VarPtr(0);
 }
 
 VarPtr operator+(const Scalar& s)

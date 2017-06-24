@@ -8,8 +8,8 @@ public:
 	Scalar(int val);
 	~Scalar();
 	VarPtr Copy();
-	int NumElems();
-	/*Matrix Size();*/
+	Scalar* NumElems();
+	Matrix Size();
 	VarPtr Conv(VarPtr ptr);
 	VarPtr Transpose();
 

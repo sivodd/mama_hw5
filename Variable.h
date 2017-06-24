@@ -23,7 +23,7 @@ public:
 	// ToDo: complete class definition
 	
 	virtual VarPtr Copy() const = 0;
-	virtual int NumElems() const = 0;
+	virtual Scalar* NumElems() const = 0;
 	virtual Matrix Size() const = 0;
 	virtual VarPtr Conv(VarPtr ptr) const = 0;
 	virtual VarPtr Transpose() const = 0;

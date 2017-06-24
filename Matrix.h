@@ -5,14 +5,14 @@
 #include"Scalar.h"
 
 
-class Matrix :public Variable {
+class Matrix :public Variable
 {
 public:
 	Matrix(int rows, int cols, int val);
-	//Matrix(int startVal, int endVal);
+	Matrix(int startVal, int endVal);
 	~Matrix();
 	VarPtr Copy();
-	int NumElems();
+	Scalar* NumElems();
 	Matrix Size();
 	VarPtr Conv(VarPtr ptr);
 	VarPtr Transpose();
