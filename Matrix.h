@@ -8,6 +8,10 @@
 class Matrix :public Variable
 {
 public:
+	int Row_;
+	int Col_;
+	IdxVec* matrix_;
+
 	Matrix(int rows, int cols, int val);
 	Matrix(int startVal, int endVal);
 	~Matrix();
@@ -16,9 +20,6 @@ public:
 	Matrix Size();
 	VarPtr Conv(VarPtr ptr);
 	VarPtr Transpose();
-	int Row_;
-	int Col_;
-	IdxVec* *matrix_;
 
 	int& operator[](int idx);
 	int& operator[](IdxVec);
@@ -26,8 +27,24 @@ public:
 	VarPtr operator+(const Variable&);
 	VarPtr operator+(const Scalar&);
 	VarPtr operator+(const Matrix&);
-	// ToDo: complete class definition
-	// ToDo: complete class definition
+	VarPtr operator*(const Variable&);
+	VarPtr operator*(const Scalar&);
+	VarPtr operator*(const Matrix&);
+	VarPtr operator<(const Variable&);
+	VarPtr operator<(const Scalar&);
+	VarPtr operator<(const Matrix&);
+	VarPtr operator>(const Variable&);
+	VarPtr operator>(const Scalar&);
+	VarPtr operator>(const Matrix&);
+	VarPtr operator==(const Variable&);
+	VarPtr operator==(const Scalar&);
+	VarPtr operator==(const Matrix&);
+	VarPtr operator&&(const Variable&);
+	VarPtr operator&&(const Scalar&);
+	VarPtr operator&&(const Matrix&);
+	VarPtr operator||(const Variable&);
+	VarPtr operator||(const Scalar&);
+	VarPtr operator||(const Matrix&);
 	
 	virtual VarPtr Conv(VarPtr rhs) const;
 private:

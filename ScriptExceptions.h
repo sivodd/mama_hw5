@@ -22,12 +22,12 @@ using namespace std;
 
 #define UNEXPECTED(x)  ScriptException(x)
 
-class ScriptException // ?????????
-{
-// Todo: complete class implementation
+class ScriptException : public exception{
+private:
+    std::string err_msg;
+    ScriptException(string errorMsg);
+    ScriptException(string errorMsg, string innerMessege); // לא בטוח אם צריך
+    const char * what () const throw () { return this->err_msg.c_str(); };
 };
-
-
-
 
 #endif // _SCRIPT_EXCEPTIONS_H_

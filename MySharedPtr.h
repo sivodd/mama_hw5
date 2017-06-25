@@ -6,68 +6,69 @@ template <class T>
 class MySharedPtr
 {
 public:
-	MySharedPtr(T* type);
-	MySharedPtr(MySharedPtr& ptr);//const?
-	virtual ~MySharedPtr();
-	T* get();
-	T& operator*();
-	T* operator->();
-	void operator=(const MySharedPtr<T>& ptr);
+    MySharedPtr(T* type);
+    MySharedPtr(MySharedPtr& ptr);//const?
+    virtual ~MySharedPtr();
+    T* get();
+    T& operator*();
+    T* operator->();
+    void operator=(const MySharedPtr<T>& ptr);
+    T* pointer_;
 private:
-	int* counter_;
-	T* pointer_;
+    int* counter_;
+
 };
 
 template <class T>
 MySharedPtr<T>::MySharedPtr(T* type)
 {
-	counter_ = new int;
+    counter_ = new int;
     *counter_= 1;
-	pointer_ = type;
+    pointer_ = type;
 }
 
 
 template <class T>
 MySharedPtr<T>::MySharedPtr(MySharedPtr& ptr)//const?
 {
-	counter_ = ptr.counter_;
+    counter_ = ptr.counter_;
     (*counter_)++;
-	pointer_ = ptr.pointer_;
+    pointer_ = ptr.pointer_;
 }
 
 template<class T>
 MySharedPtr<T>::~MySharedPtr()
 {
     (*counter_)--;
-	if (*counter_ == 0)
-	{
-		free(pointer_);
-		free(counter_);
-	}
+    if (*counter_ == 0)
+    {
+        free(pointer_);
+        free(counter_);
+    }
 }
 
 template <class T>
 T* MySharedPtr<T> ::get()
 {
-	return pointer_;
+    return pointer_;
 }
 
 template <class T>
 T& MySharedPtr<T>::operator*()
 {
-	return *pointer_;
+    return *pointer_;
 }
 
 template <class T>
 T* MySharedPtr<T>::operator->()
 {
-	return pointer_;
+    return pointer_;
 }
 
 template <class T>
 void MySharedPtr<T>::operator=(const MySharedPtr<T>& ptr)
 {
-	if (this != &ptr)
+    if (this != &ptr)
     {
         (*counter_)--;
         if (counter_==0){
