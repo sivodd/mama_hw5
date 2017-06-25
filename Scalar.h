@@ -19,7 +19,7 @@ public:
 	VarPtr operator+(const Variable&);
 	VarPtr operator+(const Scalar&);
 	VarPtr operator+(const Matrix&);
-	/*VarPtr operator*(const Variable&);
+	VarPtr operator*(const Variable&);
 	VarPtr operator*(const Scalar&);
 	VarPtr operator*(const Matrix&);
 	VarPtr operator<(const Variable&);
@@ -30,7 +30,14 @@ public:
 	VarPtr operator>(const Matrix&);
 	VarPtr operator==(const Variable&);
 	VarPtr operator==(const Scalar&);
-	VarPtr operator==(const Matrix&);*/
+	VarPtr operator==(const Matrix&);
+	VarPtr operator&&(const Variable&);
+	VarPtr operator&&(const Scalar&);
+	VarPtr operator&&(const Matrix&);
+	VarPtr operator||(const Variable&);
+	VarPtr operator||(const Scalar&);
+	VarPtr operator||(const Matrix&);
+
 	// ToDo: complete class definition
 	
 	virtual VarPtr Conv(VarPtr rhs) const; //why?

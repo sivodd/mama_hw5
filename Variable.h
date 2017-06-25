@@ -34,7 +34,7 @@ public:
 	virtual VarPtr operator+(const Variable&) const = 0;
 	virtual VarPtr operator+(const Scalar&) const = 0;
 	virtual VarPtr operator+(const Matrix&) const = 0;
-	/*virtual VarPtr operator*(const Variable&) const = 0;
+	virtual VarPtr operator*(const Variable&) const = 0;
 	virtual VarPtr operator*(const Scalar&) const = 0;
 	virtual VarPtr operator*(const Matrix&) const = 0;
 	virtual VarPtr operator<(const Variable&) const = 0;
@@ -45,9 +45,13 @@ public:
 	virtual VarPtr operator>(const Matrix&) const = 0;
 	virtual VarPtr operator==(const Variable&) const = 0;
 	virtual VarPtr operator==(const Scalar&) const = 0;
-	virtual VarPtr operator==(const Matrix&) const = 0;*/
-
-
+	virtual VarPtr operator==(const Matrix&) const = 0;
+	virtual VarPtr operator&&(const Variable&) const = 0 ;
+	virtual VarPtr operator&&(const Scalar&) const = 0;
+	virtual VarPtr operator&&(const Matrix&) const  =0;
+	virtual VarPtr operator||(const Variable&) const  = 0;
+	virtual VarPtr operator||(const Scalar&)const  = 0;
+	virtual VarPtr operator||(const Matrix&) const = 0;
 };
 
 
