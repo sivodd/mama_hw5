@@ -20,7 +20,7 @@ public:
     string GetTmpVariable();
     void ClearTmpVars();
     VarPtr& operator[](const string& x);
-//  VarPtr& at(const string& x);
+    VarPtr& at(const string& x);
     void erase(const string& x);
 
 private:

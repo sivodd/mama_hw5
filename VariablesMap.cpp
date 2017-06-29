@@ -55,8 +55,10 @@ VarPtr& VariablesMap::operator[](const string& x){
     }
     throw (INVALID_VAR_NAME(x));
 }
-//default map method:
-//VarPtr& VariablesMap::at(const string& x){}
+
+VarPtr& VariablesMap::at(const string& x){
+    return VariablesMap_.at(x);
+}
 
 void VariablesMap::erase(const string& x){
     VariablesMap_.erase(x);
