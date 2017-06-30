@@ -30,11 +30,9 @@ public:
     ScriptException(const char* error);
     ScriptException(std::string str);
     const char* what () const throw();
-<<<<<<< HEAD
+
     ~ScriptException();
-=======
-    ~ScriptException()
->>>>>>> master
+
 };
 
 ScriptException::ScriptException(const char *error)

@@ -17,3 +17,10 @@ IdxVec operator+(const IdxVec& lhs, const IdxVec& rhs)
 		res[ii] += rhs[ii];
 	return res;
 }
+
+ostream& operator<<(ostream& ro, const VarPtr& varPtr){
+	varPtr.get()->print(ro);
+	return ro;
+}
+
+

@@ -18,7 +18,7 @@ public:
 	VarPtr Copy();
 	Scalar* NumElems() const;
 	Matrix* Size();
-	Scalar* Size(int dim) const
+	Scalar* Size(int dim) const;
 	VarPtr Conv(VarPtr ptr);
 	VarPtr Transpose();
 
@@ -48,6 +48,7 @@ public:
 	VarPtr operator||(const Matrix&);
 	
 	virtual VarPtr Conv(VarPtr rhs) const;
+    virtual void print(ostream& ro) const;
 private:
 	
 };

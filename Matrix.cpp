@@ -141,13 +141,7 @@ int& Matrix::operator[](IdxVec V)
 
 VarPtr Matrix::operator+(const Variable& V)
 {
-	if(typeid(V)== typeid(Matrix))
-	{
-		Matrix* x = (Matrix)V;
-		return (this + x);
-	}
-	Scalar* y  = (Scalar)V;
-	return (this + y);
+	return (V+ *this);
 }
 
 VarPtr Matrix :: operator+(const Scalar& s)
@@ -178,13 +172,7 @@ VarPtr Matrix::operator+(const Matrix& m)
 
 VarPtr Matrix :: operator*(const Variable& V)
 {
-	if(typeid(V)== typeid(Matrix))
-	{
-		Matrix* x = (Matrix)V;
-		return (this * x);
-	}
-	Scalar* y  = (Scalar)V;
-	return (this * y);
+	return (V * (*this));
 }
 
 VarPtr Matrix :: operator*(const Scalar& s)
@@ -222,13 +210,7 @@ VarPtr Matrix :: operator*(const Matrix& m)
 
 VarPtr Matrix :: operator<(const Variable& V)
 {
-	if(typeid(V)== typeid(Matrix))
-	{
-		Matrix* x = (Matrix)V;
-		return (this < x);
-	}
-	Scalar* y  = (Scalar)V;
-	return (this < y);
+	return (V > *this);
 }
 
 VarPtr Matrix :: operator<(const Scalar& s)
@@ -236,7 +218,7 @@ VarPtr Matrix :: operator<(const Scalar& s)
 	Matrix* M = new Matrix(rows_,cols_,1);
 	for (int i =1; i<rows_+1;i++)
 	{
-		for (int j =1; j<rows_+1;j++)
+		for (int j =1; j<cols_+1;j++)
 		{
 			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] < s.Value_;
 		}
@@ -251,7 +233,7 @@ VarPtr Matrix :: operator<(const Matrix& m)
 		throw (BAD_MAT_DIMS);
 	for (int i =1; i<rows_+1;i++)
 	{
-		for (int j =1; j<rows_+1;j++)
+		for (int j =1; j<cols_+1;j++)
 		{
 			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] < (*(*m.matrix_)[i])[j];
 		}
@@ -261,13 +243,7 @@ VarPtr Matrix :: operator<(const Matrix& m)
 
 VarPtr Matrix :: operator>(const Variable& V)
 {
-	if(typeid(V)== typeid(Matrix))
-	{
-		Matrix* x = (Matrix)V;
-		return (this > x);
-	}
-	Scalar* y  = (Scalar)V;
-	return (this > y);
+	return (V < *this);
 }
 
 VarPtr Matrix :: operator>(const Scalar& s)
@@ -275,7 +251,7 @@ VarPtr Matrix :: operator>(const Scalar& s)
 	Matrix* M = new Matrix(rows_,cols_,0);
 	for (int i =1; i<rows_+1;i++)
 	{
-		for (int j =1; j<rows_+1;j++)
+		for (int j =1; j<cols_+1;j++)
 		{
 			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] > s.Value_;
 		}
@@ -290,7 +266,7 @@ VarPtr Matrix :: operator>(const Matrix& m)
 		throw (BAD_MAT_DIMS);
 	for (int i =1; i<rows_+1;i++)
 	{
-		for (int j =1; j<rows_+1;j++)
+		for (int j =1; j<cols_+1;j++)
 		{
 			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] > (*(*m.matrix_)[i])[j];
 		}
@@ -300,13 +276,7 @@ VarPtr Matrix :: operator>(const Matrix& m)
 
 VarPtr Matrix :: operator==(const Variable& V)
 {
-	if(typeid(V)== typeid(Matrix))
-	{
-		Matrix* x = (Matrix)V;
-		return (this == x);
-	}
-	Scalar* y  = (Scalar)V;
-	return (this == y);
+	return (V == *this);
 }
 
 VarPtr Matrix :: operator==(const Scalar& s)
@@ -314,7 +284,7 @@ VarPtr Matrix :: operator==(const Scalar& s)
 	Matrix* M = new Matrix(rows_,cols_,0);
 	for (int i =1; i<rows_+1;i++)
 	{
-		for (int j =1; j<rows_+1;j++)
+		for (int j =1; j<cols_+1;j++)
 		{
 			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] == s.Value_;
 		}
@@ -329,7 +299,7 @@ VarPtr Matrix :: operator==(const Matrix& m)
 		throw (BAD_MAT_DIMS);
 	for (int i =1; i<rows_+1;i++)
 	{
-		for (int j =1; j<rows_+1;j++)
+		for (int j =1; j<cols_+1;j++)
 		{
 			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] == (*(*m.matrix_)[i])[j];
 		}
@@ -366,3 +336,14 @@ VarPtr Matrix :: operator||(const Matrix&)
 {
 	throw (BAD_INPUT);
 }
+
+void Matrix :: print(ostream& ro) const{
+	for (int i=0; i< rows_; i++){
+		for (int j=0; j<cols_; j++){
+			ro << (*(*matrix_)[i])[j] << '\t';
+		}
+		if (i!=rows_-1)
+			ro << '\n';
+	}
+}
+
