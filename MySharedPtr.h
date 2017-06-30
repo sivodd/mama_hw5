@@ -9,7 +9,7 @@ public:
     MySharedPtr(T* type);
     MySharedPtr(MySharedPtr& ptr);//const?
     virtual ~MySharedPtr();
-    T* get();
+    T* get() const;
     T& operator*();
     T* operator->();
     void operator=(const MySharedPtr<T>& ptr);
@@ -48,7 +48,7 @@ MySharedPtr<T>::~MySharedPtr()
 }
 
 template <class T>
-T* MySharedPtr<T> ::get()
+T* MySharedPtr<T> ::get() const
 {
     return pointer_;
 }

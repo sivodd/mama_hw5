@@ -7,9 +7,10 @@ class Scalar: public Variable{
 public:
 	Scalar(int val);
 	~Scalar();
-	VarPtr Copy();
-	Scalar* NumElems();
+	VarPtr Copy() const ;
+	Scalar* NumElems() const;
 	Matrix* Size();
+    Scalar* Size(int dim);
 	VarPtr Conv(VarPtr ptr);
 	VarPtr Transpose();
     int Value_;
@@ -42,6 +43,7 @@ public:
 	// ToDo: complete class definition
 	
 	virtual VarPtr Conv(VarPtr rhs) const; //why?
+	void print(ostream& ro) const;
 
 };
 
