@@ -1,7 +1,7 @@
 #ifndef _SCRIPT_EXCEPTIONS_H_
 #define _SCRIPT_EXCEPTIONS_H_
 
-#include<string>
+#include<string.h>
 #include<exception>
 #include<stdexcept>
 using namespace std;
@@ -24,10 +24,36 @@ using namespace std;
 
 class ScriptException : public exception{
 private:
-    std::string err_msg;
-    ScriptException(string errorMsg);
-    ScriptException(string errorMsg, string innerMessege); // לא בטוח אם צריך
-    const char * what () const throw () { return this->err_msg.c_str(); };
+    //std::string* err_msg;
+    char* err_msg;
+public:
+    ScriptException(const char* error);
+    ScriptException(std::string str);
+    const char* what () const throw();
+    ~ScriptException();
 };
+
+ScriptException::ScriptException(const char *error)
+{
+    err_msg = new char [strlen(error)+1];
+    strcpy(err_msg,error);
+}
+
+ScriptException::ScriptException(std::string str)
+{
+    err_msg = new char[str.size()+1];
+    std::copy(str.begin(),str.end(),err_msg);
+    err_msg[str.size()] = '\0';
+}
+
+ScriptException::~ScriptException()
+{
+    delete [] err_msg ;
+}
+
+const char* ScriptException::what() const throw()
+{
+    return err_msg;
+}
 
 #endif // _SCRIPT_EXCEPTIONS_H_

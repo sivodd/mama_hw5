@@ -22,7 +22,7 @@ Scalar* Scalar::NumElems()
 	return new Scalar(1);
 } 
 
-Matrix Scalar::Size()
+Matrix* Scalar::Size()
 {
 	return new Matrix(1, 2, 1);
 }

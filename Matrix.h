@@ -8,16 +8,17 @@
 class Matrix :public Variable
 {
 public:
-	int Row_;
-	int Col_;
-	IdxVec* matrix_;
+	int rows_;
+	int cols_;
+	IdxIdx* matrix_;
 
 	Matrix(int rows, int cols, int val);
 	Matrix(int startVal, int endVal);
 	~Matrix();
 	VarPtr Copy();
-	Scalar* NumElems();
-	Matrix Size();
+	Scalar* NumElems() const;
+	Matrix* Size();
+	Scalar* Size(int dim) const
 	VarPtr Conv(VarPtr ptr);
 	VarPtr Transpose();
 
