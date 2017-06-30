@@ -9,9 +9,10 @@ public:
 	~Scalar();
 	VarPtr Copy();
 	Scalar* NumElems();
-	Matrix Size();
+	Matrix* Size();
 	VarPtr Conv(VarPtr ptr);
 	VarPtr Transpose();
+    int Value_;
 
 	int& operator[](int idx);
 	int& operator[](IdxVec);
@@ -42,8 +43,6 @@ public:
 	
 	virtual VarPtr Conv(VarPtr rhs) const; //why?
 
-private:
-	int Value_;
 };
 
 #endif // _SCALAR_H_

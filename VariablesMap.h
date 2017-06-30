@@ -15,7 +15,7 @@ using namespace std;
 class VariablesMap {
 public:
     VariablesMap();
-    ~VariablesMap(){string.~string();};// i think string doesn't need to be deleted because it's destructor is automatically called
+    ~VariablesMap(){};//string.~string();};// i think string doesn't need to be deleted because it's destructor is automatically called
     void SetSavedName(const string& newSavedName);
     string GetTmpVariable();
     void ClearTmpVars();

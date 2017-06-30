@@ -1,46 +1,46 @@
 #include"Matrix.h"
 #include"ScriptExceptions.h"
 
-Matrix ::Matrix(int rows, int cols, int val) :
-	Variable(), Row_(rows), Col_(cols)
+Matrix :: Matrix(int rows, int cols, int val) :
+	Variable(), rows_(rows), cols_(cols)
 {
-	matrix_ = new IdxVec(rows+1);
+	matrix_ = new IdxIdx(rows+1);
 	for (int i = 1; i <= rows + 1; i++)
 	{
-		matrix_[i] = new IdxVec(cols+1);
+		(*matrix_)[i] = new IdxVec(cols+1);
 		for (int j = 1; j <= cols+1; j++)
 		{
-			matrix_[i][j] = val;
+			(*(*matrix_)[i])[j] = val;
 		}
 	}
 }
 
 Matrix::Matrix(int startVal, int endVal) :
-	Variable(), Row_(1), Col_(endVal - startVal+1)
+	Variable(), rows_(1), cols_(endVal - startVal+1)
 {
-	matrix_ = new IdxVec(2);
-	martix_[1] = new IdxVec(Col_+1);
-	for (int i = 1; i < Col_ + 1; i++)
+	matrix_ = new IdxIdx(2);
+	(*matrix_)[1] = new IdxVec(cols_+1);
+	for (int i = 1; i < cols_ + 1; i++)
 	{
-		matrix_[1][j] = startVal + i - 1;
+		(*(*matrix_)[1])[i] = startVal + i - 1;
 	}
 }
 
 Matrix::~Matrix()
 {
-	for (int i = 1; i<Row_+1;i++)
+	for (int i = 1; i<rows_+1;i++)
 	{
-		free(Matrix[i]);
+		free((*matrix_)[i]);
 	}
 	free(matrix_);
 }
 
-VarPtr Copy()
+VarPtr Matrix :: Copy()
 {
-	Matrix* m = new Matrix(Row_,Col_,1);
-	for (int i =1; i< Row_+1;i++)
+	Matrix* m = new Matrix(rows_,cols_,1);
+	for (int i =1; i< rows_+1;i++)
 	{
-		for (int j=1;j< Col_+1;j++)
+		for (int j=1;j< cols_+1;j++)
 		{
 			m->matrix_[i][j] = matrix_[i][j];
 		}
@@ -48,17 +48,26 @@ VarPtr Copy()
 	return VarPtr(m);
 }
 
-Scalar* NumElems()
+Scalar* Matrix :: NumElems() const
 {
-	return Scalar(Row_*Col_);
+	return new Scalar(rows_*cols_);
 }
 
-Matrix Size()
+Matrix* Matrix :: Size()
 {
-	Matrix m = new Matrix(1, 2);
-	m.matrix_[1][1] = Row_;
-	m.matrix_[1][2] = Col_;
+	Matrix* m = new Matrix(1, 2);
+	(*(*m->matrix_)[1])[1] = rows_;
+	(*(*m->matrix_)[1])[2] = cols_;
 	return m;
+}
+
+Scalar* Matrix::Size(int dim) const
+{
+	if ((dim>2)||(dim<1))
+	{
+		throw BAD_INPUT;
+	}
+	return new Scalar(rows_*cols_);
 }
 
 VarPtr Matrix::Conv(VarPtr rhs) const
@@ -96,41 +105,41 @@ VarPtr Matrix::Conv(VarPtr rhs) const
 	return pRet;
 }
 
-VarPtr Transpose()
+VarPtr Matrix :: Transpose()
 {
-	Matrix m = new Matrix(Col_, Row_, 0);
-	for (int i = 1; i < Row_ + 1; i++)
+	Matrix* m = new Matrix(cols_, rows_, 0);
+	for (int i = 1; i < rows_ + 1; i++)
 	{
-		for (int j = 1; j < Col_ + 1; j++)
+		for (int j = 1; j < cols_ + 1; j++)
 		{
-			m[j][i] = matrix_[i][j];
+			(*(*m->matrix_)[j])[i] = (*(*matrix_)[i])[j];
 		}
 	}
-	return m;
+	return VarPtr(m);
 }
 
-int& operator[](int idx)
+int& Matrix :: operator[](int idx)
 {
-	if ((idx < 1) || (idx > this.size))
+	if ((idx < 1) || (idx > rows_*cols_))
 		throw (INDEX_OUT_OF_RANGE);
 	int col = 1;
-	while ((idx%Row_) > 1)
+	while ((idx%rows_) > 1)
 	{
-		idx -= Row_;
+		idx -= rows_;
 		col++;
 	}
-	return matrix[idx][col];	
+	return (*(*matrix_)[idx])[col];
 }
 
-int& operator[](IdxVec V)
+int& Matrix::operator[](IdxVec V)
 {
-	if ((V.size != 2) || (V[0]>Row_) || (V[0]<1) ||
-		(V[1]>Col_) || (V[1]<1))
+	if (((int)V.size != 2) || (V[0]>rows_) || (V[0]<1) ||
+		(V[1]>cols_) || (V[1]<1))
 		throw(INDEX_OUT_OF_RANGE);
-	return matrix[V[0]][V[1]];
+	return (*(*matrix_)[V[0]])[V[1]];
 }
 
-VarPtr operator+(const Variable& V)
+VarPtr Matrix::operator+(const Variable& V)
 {
 	if(typeid(V)== typeid(Matrix))
 	{
@@ -141,11 +150,11 @@ VarPtr operator+(const Variable& V)
 	return (this + y);
 }
 
-VarPtr operator+(const Scalar& s)
+VarPtr Matrix :: operator+(const Scalar& s)
 {
-	for (int i = 1; i < Row_ + 1; i++)
+	for (int i = 1; i < rows_ + 1; i++)
 	{
-		for (int j = 1; j < Col_ + 1; j++)
+		for (int j = 1; j < cols_ + 1; j++)
 		{
 			matrix_[i][j] += s.Value_;
 		}
@@ -153,21 +162,21 @@ VarPtr operator+(const Scalar& s)
 	return VarPtr(this);
 }
 
-VarPtr operator+(const Matrix& m)
+VarPtr Matrix::operator+(const Matrix& m)
 {
-	if ((m.Row_ != Row_) || (m.Col_ != Col_))
+	if ((m.rows_ != rows_) || (m.cols_ != cols_))
 		throw (BAD_MAT_DIMS);
-	for (int i = 1; i < Row_ + 1; i++)
+	for (int i = 1; i < rows_ + 1; i++)
 	{
-		for (int j = 1; j < Col_ + 1; j++)
+		for (int j = 1; j < cols_ + 1; j++)
 		{
-			matrix_[i][j] += m.matrix_[i][j];
+			(*(*matrix_)[i])[j] += (*(*m.matrix_)[i])[j];
 		}
 	}
 	return VarPtr(this);
 }
 
-VarPtr operator*(const Variable& V)
+VarPtr Matrix :: operator*(const Variable& V)
 {
 	if(typeid(V)== typeid(Matrix))
 	{
@@ -178,32 +187,40 @@ VarPtr operator*(const Variable& V)
 	return (this * y);
 }
 
-VarPtr operator*(const Scalar& s)
+VarPtr Matrix :: operator*(const Scalar& s)
 {
-	return s*this;
+	Matrix* m = new Matrix(rows_,cols_,0);
+	for (int i=1; 1 < m->rows_+1 ; i++)
+	{
+		for (int j=1; 1 < m->cols_+1 ; j++)
+		{
+			(*(*m->matrix_)[i])[j] = s.Value_*((*(*matrix_)[i])[j]);
+		}
+	}
+	return VarPtr(m);
 }
 
-VarPtr operator*(const Matrix& m)
+VarPtr Matrix :: operator*(const Matrix& m)
 {
-	if (Row_!= m.Col_)
+	if (rows_!= m.cols_)
 		throw(BAD_MAT_PROD);
-	Matrix* M = new Matrix(Row_,m.Col_,1);
-	for (int i=1; 1 < M->Row_+1 ; i++)
+	Matrix* M = new Matrix(rows_,m.cols_,1);
+	for (int i=1; 1 < M->rows_+1 ; i++)
 	{
-		for (int j=1; 1 < M->Col__+1 ; j++)
+		for (int j=1; 1 < M->cols_+1 ; j++)
 		{
 			int sum =0;
-			for(int k=1; k < Col_+1 ; k++)
+			for(int k=1; k < cols_+1 ; k++)
 			{
-				sum += matrix_[i][k]*m.matrix_[k][j];
+				sum += ((*(*matrix_)[i])[k])*((*(*m.matrix_)[k])[j]);
 			}
-			M->matrix_[i][j] = sum;
+			(*(*M->matrix_)[i])[j] = sum;
 		}
 	}
 	return VarPtr(M);
 }
 
-VarPtr operator<(const Variable& V)
+VarPtr Matrix :: operator<(const Variable& V)
 {
 	if(typeid(V)== typeid(Matrix))
 	{
@@ -214,27 +231,35 @@ VarPtr operator<(const Variable& V)
 	return (this < y);
 }
 
-VarPtr operator<(const Scalar& s)
+VarPtr Matrix :: operator<(const Scalar& s)
 {
-	return (s > this);
-}
-
-VarPtr operator<(const Matrix& m)
-{
-	Matrix* M = new Matrix(Row_,Col_,0);
-	if ((Row_!= m.Row_) || (Col_!=m.Col_))
-		throw (BAD_MAT_DIMS);
-	for (int i =1; i<Row_+1;i++)
+	Matrix* M = new Matrix(rows_,cols_,1);
+	for (int i =1; i<rows_+1;i++)
 	{
-		for (int j =1; j<Row_+1;j++)
+		for (int j =1; j<rows_+1;j++)
 		{
-			M->matrix_[i][j] = matrix_[i][j] < m.matrix_[i][j];
+			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] < s.Value_;
 		}
 	}
 	return VarPtr(M);
 }
 
-VarPtr operator>(const Variable& V)
+VarPtr Matrix :: operator<(const Matrix& m)
+{
+	Matrix* M = new Matrix(rows_,cols_,0);
+	if ((rows_!= m.rows_) || (cols_!=m.cols_))
+		throw (BAD_MAT_DIMS);
+	for (int i =1; i<rows_+1;i++)
+	{
+		for (int j =1; j<rows_+1;j++)
+		{
+			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] < (*(*m.matrix_)[i])[j];
+		}
+	}
+	return VarPtr(M);
+}
+
+VarPtr Matrix :: operator>(const Variable& V)
 {
 	if(typeid(V)== typeid(Matrix))
 	{
@@ -245,27 +270,35 @@ VarPtr operator>(const Variable& V)
 	return (this > y);
 }
 
-VarPtr operator>(const Scalar& s)
+VarPtr Matrix :: operator>(const Scalar& s)
 {
-	return (s<this);
-}
-
-VarPtr operator>(const Matrix& m)
-{
-	Matrix* M = new Matrix(Row_,Col_,0);
-	if ((Row_!= m.Row_) || (Col_!=m.Col_))
-		throw (BAD_MAT_DIMS);
-	for (int i =1; i<Row_+1;i++)
+	Matrix* M = new Matrix(rows_,cols_,0);
+	for (int i =1; i<rows_+1;i++)
 	{
-		for (int j =1; j<Row_+1;j++)
+		for (int j =1; j<rows_+1;j++)
 		{
-			M->matrix_[i][j] = matrix_[i][j] > m.matrix_[i][j];
+			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] > s.Value_;
 		}
 	}
 	return VarPtr(M);
 }
 
-VarPtr operator==(const Variable& V)
+VarPtr Matrix :: operator>(const Matrix& m)
+{
+	Matrix* M = new Matrix(rows_,cols_,0);
+	if ((rows_!= M->rows_) || (cols_!=M->cols_))
+		throw (BAD_MAT_DIMS);
+	for (int i =1; i<rows_+1;i++)
+	{
+		for (int j =1; j<rows_+1;j++)
+		{
+			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] > (*(*m.matrix_)[i])[j];
+		}
+	}
+	return VarPtr(M);
+}
+
+VarPtr Matrix :: operator==(const Variable& V)
 {
 	if(typeid(V)== typeid(Matrix))
 	{
@@ -276,52 +309,60 @@ VarPtr operator==(const Variable& V)
 	return (this == y);
 }
 
-VarPtr operator==(const Scalar& s)
+VarPtr Matrix :: operator==(const Scalar& s)
 {
-	return (s==this);
-}
-
-VarPtr operator==(const Matrix& m)
-{
-	Matrix* M = new Matrix(Row_,Col_,0);
-	if ((Row_!= m.Row_) || (Col_!=m.Col_))
-		throw (BAD_MAT_DIMS);
-	for (int i =1; i<Row_+1;i++)
+	Matrix* M = new Matrix(rows_,cols_,0);
+	for (int i =1; i<rows_+1;i++)
 	{
-		for (int j =1; j<Row_+1;j++)
+		for (int j =1; j<rows_+1;j++)
 		{
-			M->matrix_[i][j] = matrix_[i][j] == m.matrix_[i][j];
+			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] == s.Value_;
 		}
 	}
 	return VarPtr(M);
 }
 
-VarPtr operator&&(const Variable& V)
+VarPtr Matrix :: operator==(const Matrix& m)
+{
+	Matrix* M = new Matrix(rows_,cols_,0);
+	if ((rows_!= m.rows_) || (cols_!=m.cols_))
+		throw (BAD_MAT_DIMS);
+	for (int i =1; i<rows_+1;i++)
+	{
+		for (int j =1; j<rows_+1;j++)
+		{
+			(*(*M->matrix_)[i])[j] = (*(*matrix_)[i])[j] == (*(*m.matrix_)[i])[j];
+		}
+	}
+	return VarPtr(M);
+}
+
+VarPtr Matrix :: operator&&(const Variable& V)
 {
 	throw (BAD_INPUT);
 }
 
-VarPtr operator&&(const Scalar&)
+VarPtr Matrix :: operator&&(const Scalar&)
 {
 	throw (BAD_INPUT);
 }
 
-VarPtr operator&&(const Matrix&)
+VarPtr Matrix :: operator&&(const Matrix&)
 {
 	throw (BAD_INPUT);
 }
 
-VarPtr operator||(const Variable& V)
+VarPtr Matrix :: operator||(const Variable& V)
 {
 	throw (BAD_INPUT);
 }
 
-VarPtr operator||(const Scalar&)
+VarPtr Matrix :: operator||(const Scalar&)
 {
 	throw (BAD_INPUT);
 }
 
-VarPtr operator||(const Matrix&)
+VarPtr Matrix :: operator||(const Matrix&)
 {
 	throw (BAD_INPUT);
 }

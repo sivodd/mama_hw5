@@ -9,8 +9,11 @@ class Variable;
 class Scalar;
 class Matrix;
 
+using namespace std;
+
 typedef MySharedPtr<Variable> VarPtr;
 typedef vector<int> IdxVec;
+typedef vector<IdxVec*> IdxIdx;
 
 IdxVec operator+(const IdxVec& lhs, const IdxVec& rhs);
 
@@ -24,7 +27,8 @@ public:
 	
 	virtual VarPtr Copy() const = 0;
 	virtual Scalar* NumElems() const = 0;
-	virtual Matrix Size() const = 0;
+	virtual Matrix* Size() const = 0;
+	virtual Scalar* Size(int dim) const =0;
 	virtual VarPtr Conv(VarPtr ptr) const = 0;
 	virtual VarPtr Transpose() const = 0;
 	
