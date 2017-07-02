@@ -37,7 +37,7 @@ public:
 
 ScriptException::ScriptException(const char *error)
 {
-	err_msg = new char [strlen(error)+1];
+    err_msg = new char [strlen(error)+1];
     strcpy(err_msg,error);
 }
 

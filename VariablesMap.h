@@ -7,8 +7,6 @@
 #include <list>
 #include <memory>
 #include "Variable.h"
-#include "Scalar.h"
-#include "Matrix.h"
 using namespace std;
 
 
