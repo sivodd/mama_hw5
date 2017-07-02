@@ -6,7 +6,6 @@ template <class T>
 class MySharedPtr
 {
 public:
-	MySharedPtr();
     MySharedPtr(T* type);
     MySharedPtr(MySharedPtr& ptr);//const?
     virtual ~MySharedPtr();
@@ -14,20 +13,11 @@ public:
     T& operator*();
     T* operator->();
     void operator=(const MySharedPtr<T>& ptr);
-	/*ostream& operator<<(ostream& ro);*/
     T* pointer_;
 private:
     int* counter_;
 
 };
-
-template <class T>
-MySharedPtr<T>::MySharedPtr()
-{
-	counter_ = new int;
-	*counter_ = 0;
-	pointer_ = NULL;
-}
 
 template <class T>
 MySharedPtr<T>::MySharedPtr(T* type)
@@ -90,12 +80,7 @@ void MySharedPtr<T>::operator=(const MySharedPtr<T>& ptr)
         pointer_ = ptr.pointer_;
     }
 }
-//
-//template<class T>
-//ostream& MySharedPtr<T>::operator<<(ostream& ro)
-//{
-//	cout << *pointer_;
-//}
+
 
 #endif // _MY_SHARED_PTR_H_
 

@@ -4,8 +4,8 @@
 
 using namespace std;
 
-//Variable::Variable() {};
-//Variable::~Variable() {};
+Variable::Variable() {};
+Variable::~Variable() {};
 
 IdxVec operator+(const IdxVec& lhs, const IdxVec& rhs)
 {
@@ -17,4 +17,10 @@ IdxVec operator+(const IdxVec& lhs, const IdxVec& rhs)
 		res[ii] += rhs[ii];
 	return res;
 }
+
+ostream& operator<<(ostream& ro, const VarPtr& varPtr){
+	varPtr.get()->print(ro);
+	return ro;
+}
+
 
