@@ -140,10 +140,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Commands.h" />
+    <ClInclude Include="LineParser.h" />
+    <ClInclude Include="MamatScriptEngine.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="MySharedPtr.h" />
+    <ClInclude Include="Scalar.h" />
+    <ClInclude Include="ScriptExceptions.h" />
+    <ClInclude Include="Variable.h" />
+    <ClInclude Include="VariablesMap.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MySharedPtr.cpp" />
+    <ClCompile Include="Commands.cpp" />
+    <ClCompile Include="LineParser.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MamatScriptEngine.cpp" />
+    <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="Scalar.cpp" />
+    <ClCompile Include="Variable.cpp" />
+    <ClCompile Include="VariablesMap.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
