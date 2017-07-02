@@ -5,7 +5,7 @@
 using namespace std;
 
 Scalar::Scalar(int val) :
-	Variable(), Value_(val) {}
+	Value_(val) {} //Variable(), 
 
 Scalar::~Scalar() {}
 
@@ -15,19 +15,19 @@ VarPtr Scalar::Copy() const
 	return VarPtr(x);
 }
 
-Scalar* Scalar::NumElems() const
+VarPtr Scalar::NumElems() const
 {
-	return new Scalar(1);
+	return VarPtr(new Scalar(1));
 }
 
-Matrix* Scalar::Size()
+VarPtr Scalar::Size() const
 {
-	return new Matrix(1, 2, 1);
+	return VarPtr(new Matrix(1, 2, 1));
 }
 
-Scalar* Scalar::Size(int dim)
+VarPtr Scalar::Size(int dim) const
 {
-	return new Scalar(1);
+	return VarPtr(new Scalar(1));
 }
 
 VarPtr Scalar::Conv(VarPtr rhs) const
@@ -42,23 +42,23 @@ VarPtr Scalar::Conv(VarPtr rhs) const
 	return pRet;
 }
 
-VarPtr Scalar::Transpose()
+VarPtr Scalar::Transpose() const
 {
 	Scalar* x = new Scalar(Value_);
 	return VarPtr(x);
 }
 
-int& Scalar::operator[](int idx)
+const int& Scalar::operator[](int idx) const
 {
 	if (idx != 1)
 		throw(INDEX_OUT_OF_RANGE);
 	return Value_;
 }
 
-int& Scalar::operator[](IdxVec V)
+int& Scalar::operator[](IdxVec V) const
 {
 	int size = (int)V.size();
-	bool dif = false; //omer-  what the mean of throw
+	bool dif = false; 
 	for (int i = 1; i < size + 1; i++)
 	{
 		if (V[i] != 1)
@@ -66,21 +66,22 @@ int& Scalar::operator[](IdxVec V)
 	}
 	if (dif)
 		throw(INDEX_OUT_OF_RANGE);
-	return Value_;
+	int x = Value_;//omer
+	return x;
 }
 
-VarPtr Scalar::operator+(const Variable& V)
+VarPtr Scalar::operator+(const Variable& V) const
 {
 	return (V + *this);
 }
 
-VarPtr Scalar::operator+(const Scalar& s)
+VarPtr Scalar::operator+(const Scalar& s) const
 {
 	Scalar* x = new Scalar(Value_ + s.Value_);
 	return VarPtr(x);
 }
 
-VarPtr Scalar::operator+(const Matrix& m)
+VarPtr Scalar::operator+(const Matrix& m) const
 {
 	Matrix* M = new Matrix(m.rows_,m.cols_,0);
 	for (int i = 1; i < M->rows_ + 1; i++)
@@ -93,18 +94,18 @@ VarPtr Scalar::operator+(const Matrix& m)
 	return  VarPtr(M);
 }
 
-VarPtr Scalar::operator*(const Variable& V)
+VarPtr Scalar::operator*(const Variable& V) const
 {
 	return (V * (*this));
 }
 
-VarPtr Scalar::operator*(const Scalar& s)
+VarPtr Scalar::operator*(const Scalar& s) const
 {
 	Scalar *x = new Scalar(Value_ + s.Value_);
 	return VarPtr(x);
 }
 
-VarPtr Scalar::operator*(const Matrix& m)
+VarPtr Scalar::operator*(const Matrix& m) const
 {
 	Matrix* M = new Matrix(m.rows_,m.cols_,1);
 	for (int i =1; i<M->rows_+1;i++)
@@ -115,18 +116,18 @@ VarPtr Scalar::operator*(const Matrix& m)
 	return VarPtr(M);
 }
 
-VarPtr Scalar::operator<(const Variable& V)
+VarPtr Scalar::operator<(const Variable& V) const
 {
 	return (V > *this);
 }
 
-VarPtr Scalar::operator<(const Scalar& s)
+VarPtr Scalar::operator<(const Scalar& s) const
 {
 	Scalar* S = new Scalar(Value_ < s.Value_);
 	return VarPtr(S);
 }
 
-VarPtr Scalar::operator<(const Matrix& m)
+VarPtr Scalar::operator<(const Matrix& m) const
 {
 	Matrix* M = new Matrix (m.rows_,m.cols_,0);
 	for (int i=1; i<m.rows_+1;i++)
@@ -139,18 +140,18 @@ VarPtr Scalar::operator<(const Matrix& m)
 	return VarPtr(M);
 }
 
-VarPtr Scalar::operator>(const Variable& V)
+VarPtr Scalar::operator>(const Variable& V) const
 {
 	return (V > *this);
 }
 
-VarPtr Scalar::operator>(const Scalar& s)
+VarPtr Scalar::operator>(const Scalar& s) const
 {
 	Scalar* S = new Scalar(Value_ > s.Value_);
 	return VarPtr(S);
 }
 
-VarPtr Scalar::operator>(const Matrix& m)
+VarPtr Scalar::operator>(const Matrix& m) const
 {
 	Matrix* M = new Matrix (m.rows_,m.cols_,0);
 	for (int i=1; i<m.rows_+1;i++)
@@ -163,18 +164,18 @@ VarPtr Scalar::operator>(const Matrix& m)
 	return VarPtr(M);
 }
 
-VarPtr Scalar::operator==(const Variable& V)
+VarPtr Scalar::operator==(const Variable& V) const
 {
 	return (V == *this);
 }
 
-VarPtr Scalar::operator==(const Scalar& s)
+VarPtr Scalar::operator==(const Scalar& s) const
 {
 	Scalar* S = new Scalar(Value_==s.Value_);
 	return VarPtr(S);
 }
 
-VarPtr Scalar::operator==(const Matrix& m)
+VarPtr Scalar::operator==(const Matrix& m) const
 {
 	Matrix* M = new Matrix (m.rows_,m.cols_,0);
 	for (int i=1; i<m.rows_+1;i++)
@@ -187,39 +188,55 @@ VarPtr Scalar::operator==(const Matrix& m)
 	return VarPtr(M);
 }
 
-VarPtr Scalar::operator&&(const Variable& V)
+VarPtr Scalar::operator&&(const Variable& V) const
 {
 	return (V && *this);
 }
 
-VarPtr Scalar::operator&&(const Scalar& s)
+VarPtr Scalar::operator&&(const Scalar& s) const
 {
 	Scalar* S = new Scalar(Value_&&s.Value_);
 	return VarPtr(S);
 }
 
-VarPtr Scalar::operator&&(const Matrix&)
+VarPtr Scalar::operator&&(const Matrix&) const
 {
 	throw (BAD_INPUT);
 }
 
-VarPtr Scalar::operator||(const Variable& V)
+VarPtr Scalar::operator||(const Variable& V) const
 {
 	return (V || *this);
 }
 
-VarPtr Scalar::operator||(const Scalar& s)
+VarPtr Scalar::operator||(const Scalar& s) const
 {
 	Scalar* S = new Scalar(Value_||s.Value_);
 	return VarPtr(S);
 }
 
-VarPtr Scalar::operator||(const Matrix&)
+VarPtr Scalar::operator||(const Matrix&) const
 {
 	throw (BAD_INPUT);
 }
 
-void Scalar :: print(ostream& ro) const{
-    ro << Value_;
-
+ostream& Scalar::operator<<(ostream& ro) {
+	print(ro);
+	return ro;
 }
+
+void Scalar::print(ostream& ro) const {
+	ro << Value_;
+}
+
+//void Scalar::operator<<(const Variable&) const;
+//{
+//	cout << Value_ << endl;
+//}
+
+
+//
+//void Scalar :: print(ostream& ro) const{
+//    ro << Value_;
+//
+//}
