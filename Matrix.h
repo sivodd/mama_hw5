@@ -15,41 +15,40 @@ public:
 	Matrix(int rows, int cols, int val);
 	Matrix(int startVal, int endVal);
 	~Matrix();
-	VarPtr Copy();
-	Scalar* NumElems() const;
-	Matrix* Size();
-	Scalar* Size(int dim) const;
-	VarPtr Conv(VarPtr ptr);
-	VarPtr Transpose();
+	VarPtr Copy() const;
+	VarPtr NumElems() const;
+	VarPtr Size() const ;
+	VarPtr Size(int dim) const;
+	VarPtr Transpose() const ;
 
-	int& operator[](int idx);
-	int& operator[](IdxVec);
+	const int& operator[](int idx) const ;
+	int& operator[](IdxVec) const ;
 
-	VarPtr operator+(const Variable&);
-	VarPtr operator+(const Scalar&);
-	VarPtr operator+(const Matrix&);
-	VarPtr operator*(const Variable&);
-	VarPtr operator*(const Scalar&);
-	VarPtr operator*(const Matrix&);
-	VarPtr operator<(const Variable&);
-	VarPtr operator<(const Scalar&);
-	VarPtr operator<(const Matrix&);
-	VarPtr operator>(const Variable&);
-	VarPtr operator>(const Scalar&);
-	VarPtr operator>(const Matrix&);
-	VarPtr operator==(const Variable&);
-	VarPtr operator==(const Scalar&);
-	VarPtr operator==(const Matrix&);
-	VarPtr operator&&(const Variable&);
-	VarPtr operator&&(const Scalar&);
-	VarPtr operator&&(const Matrix&);
-	VarPtr operator||(const Variable&);
-	VarPtr operator||(const Scalar&);
-	VarPtr operator||(const Matrix&);
-	
+	VarPtr operator+(const Variable&) const;
+	VarPtr operator+(const Scalar&)const;
+	VarPtr operator+(const Matrix&)const;
+	VarPtr operator*(const Variable&)const;
+	VarPtr operator*(const Scalar&)const;
+	VarPtr operator*(const Matrix&)const;
+	VarPtr operator<(const Variable&)const;
+	VarPtr operator<(const Scalar&)const;
+	VarPtr operator<(const Matrix&)const;
+	VarPtr operator>(const Variable&)const;
+	VarPtr operator>(const Scalar&)const;
+	VarPtr operator>(const Matrix&)const;
+	VarPtr operator==(const Variable&)const;
+	VarPtr operator==(const Scalar&)const;
+	VarPtr operator==(const Matrix&)const;
+	VarPtr operator&&(const Variable&)const;
+	VarPtr operator&&(const Scalar&)const;
+	VarPtr operator&&(const Matrix&)const;
+	VarPtr operator||(const Variable&)const;
+	VarPtr operator||(const Scalar&)const;
+	VarPtr operator||(const Matrix&)const;
+	ostream& operator<<(ostream& ro);
+	void print(ostream& ro) const;
+
 	virtual VarPtr Conv(VarPtr rhs) const;
-    virtual void print(ostream& ro) const;
-private:
 	
 };
 
