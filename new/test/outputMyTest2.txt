@@ -1,0 +1,60 @@
+a =
+-1
+numela =
+1
+b =
+2
+multab =
+-2
+addab =
+1
+morethanab =
+1
+equalab =
+0
+andab =
+1
+orab =
+1
+c =
+1
+convac =
+-1
+A =
+1	2	3	4	5	
+numelA =
+5
+convAc =
+1	2	3	4	5	
+multAb =
+2	4	6	8	10	
+addAb =
+3	4	5	6	7	
+morethanAb =
+1	0	0	0	0	
+equalAb =
+0	1	0	0	0	
+Invalid input arguments for operator or function.
+Undefined function or variable 'andAb'
+Invalid input arguments for operator or function.
+Undefined function or variable 'orAb'
+B =
+2	3	4	5	6	
+transposeB =
+2	
+3	
+4	
+5	
+6	
+multAB =
+70	
+addAB =
+3	5	7	9	11	
+morethanAB =
+1	1	1	1	1	
+equalAB =
+0	0	0	0	0	
+Invalid input arguments for operator or function.
+Undefined function or variable 'andAB'
+Invalid input arguments for operator or function.
+Undefined function or variable 'orAB'

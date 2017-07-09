@@ -1,0 +1,54 @@
+a=3
+if (a==3)
+a=4
+end
+disp a
+for a=1:2
+disp a
+end
+a=1:5
+a(2:3)=7:8
+disp a
+b=1:8
+q=numel(b)
+disp q
+q=size(b)
+disp q
+c=8
+b=4
+a=2
+q=c+b+a
+disp q
+q=c+b*a
+disp q
+q=(c+b)*a
+disp q
+a=zeros(2)
+b=zeros(3)
+q=a+b
+q=a*b
+q=size(a)*a
+disp q
+f=1:3
+disp f
+f=transpose(f)
+disp f
+q=f(2,1)
+disp q
+b=zeros(2,3)
+b(1,4)=2
+b(0,1)=2
+b(3,1)=2
+b(1,1)=1
+b(1,2)=2
+b(1,3)=3
+b(2,1)=4
+b(2,2)=5
+b(2,3)=6
+c=b
+q=c==b
+disp q
+c(1,2)=10
+q=b<c
+disp q
+
