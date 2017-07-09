@@ -1,0 +1,813 @@
+:allocator<int> > > >::_M_allocate(unsigned long) (stl_vector.h:168)
+==91==    by 0x40A2A0: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (vector.tcc:549)
+==91==    by 0x409930: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::resize(unsigned long) (stl_vector.h:667)
+==91==    by 0x406B68: Matrix::Matrix(int, int, int) (Matrix.cpp:8)
+==91==    by 0x407460: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:87)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==
+==91== 64 (48 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 57 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40B5AC: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==91==    by 0x40AE58: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (stl_vector.h:168)
+==91==    by 0x40A2A0: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (vector.tcc:549)
+==91==    by 0x409930: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::resize(unsigned long) (stl_vector.h:667)
+==91==    by 0x406B68: Matrix::Matrix(int, int, int) (Matrix.cpp:8)
+==91==    by 0x409134: Matrix::operator==(Scalar const&) const (Matrix.cpp:259)
+==91==    by 0x40DEA8: Scalar::operator==(Variable const&) const (Scalar.cpp:164)
+==91==    by 0x414A56: Commands::Equal(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:359)
+==91==    by 0x4113D4: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:76)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==
+==91== 64 (48 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 58 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40B5AC: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==91==    by 0x40AE58: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (stl_vector.h:168)
+==91==    by 0x40A2A0: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (vector.tcc:549)
+==91==    by 0x409930: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::resize(unsigned long) (stl_vector.h:667)
+==91==    by 0x406B68: Matrix::Matrix(int, int, int) (Matrix.cpp:8)
+==91==    by 0x408F45: Matrix::operator>(Matrix const&) const (Matrix.cpp:244)
+==91==    by 0x4088BC: Matrix::operator<(Variable const&) const (Matrix.cpp:201)
+==91==    by 0x41486C: Commands::LessThan(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:347)
+==91==    by 0x4113BC: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:73)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==
+==91== 64 (48 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 59 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40B5AC: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==91==    by 0x40AE58: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (stl_vector.h:168)
+==91==    by 0x40A2A0: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (vector.tcc:549)
+==91==    by 0x409930: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::resize(unsigned long) (stl_vector.h:667)
+==91==    by 0x406B68: Matrix::Matrix(int, int, int) (Matrix.cpp:8)
+==91==    by 0x408725: Matrix::operator*(Matrix const&) const (Matrix.cpp:186)
+==91==    by 0x408532: Matrix::operator*(Variable const&) const (Matrix.cpp:170)
+==91==    by 0x413FE6: Commands::Mult(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:305)
+==91==    by 0x411374: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:60)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==
+==91== 64 (48 direct, 16 indirect) bytes in 2 blocks are definitely lost in loss record 60 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40B5AC: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==91==    by 0x40AE58: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (stl_vector.h:168)
+==91==    by 0x40A2A0: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (vector.tcc:549)
+==91==    by 0x409930: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::resize(unsigned long) (stl_vector.h:667)
+==91==    by 0x406B68: Matrix::Matrix(int, int, int) (Matrix.cpp:8)
+==91==    by 0x406F7E: Matrix::Size() const (Matrix.cpp:46)
+==91==    by 0x40749A: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:88)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==
+==91== 72 (40 direct, 32 indirect) bytes in 1 blocks are definitely lost in loss record 63 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x406F60: Matrix::Size() const (Matrix.cpp:46)
+==91==    by 0x4117B7: Commands::Size(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:113)
+==91==    by 0x411254: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:34)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91== 72 bytes in 18 blocks are definitely lost in loss record 64 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x40EB2B: VariablesMap::operator[](std::string const&) (VariablesMap.cpp:62)
+==91==    by 0x402AC8: LineParser::ParseAssignment(std::string) (LineParser.cpp:98)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91== 104 (40 direct, 64 indirect) bytes in 1 blocks are definitely lost in loss record 65 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40855C: Matrix::operator*(Scalar const&) const (Matrix.cpp:174)
+==91==    by 0x40D95E: Scalar::operator*(Variable const&) const (Scalar.cpp:107)
+==91==    by 0x413FE6: Commands::Mult(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:305)
+==91==    by 0x411374: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:60)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91== 104 (40 direct, 64 indirect) bytes in 1 blocks are definitely lost in loss record 66 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40D9EE: Scalar::operator*(Matrix const&) const (Scalar.cpp:116)
+==91==    by 0x408532: Matrix::operator*(Variable const&) const (Matrix.cpp:170)
+==91==    by 0x413FE6: Commands::Mult(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:305)
+==91==    by 0x411374: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:60)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91== 112 (40 direct, 72 indirect) bytes in 1 blocks are definitely lost in loss record 67 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x406EA2: Matrix::Copy() const (Matrix.cpp:37)
+==91==    by 0x412F32: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:240)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91== 136 (40 direct, 96 indirect) bytes in 1 blocks are definitely lost in loss record 68 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x407130: Matrix::Transpose() const (Matrix.cpp:60)
+==91==    by 0x4121E4: Commands::Transpose(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:173)
+==91==    by 0x41129C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:43)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91== 136 (40 direct, 96 indirect) bytes in 1 blocks are definitely lost in loss record 69 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40743A: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:87)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91== 200 (144 direct, 56 indirect) bytes in 3 blocks are definitely lost in loss record 70 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40B5AC: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==91==    by 0x40AE58: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (stl_vector.h:168)
+==91==    by 0x40A2A0: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (vector.tcc:549)
+==91==    by 0x409930: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::resize(unsigned long) (stl_vector.h:667)
+==91==    by 0x406B68: Matrix::Matrix(int, int, int) (Matrix.cpp:8)
+==91==    by 0x411FFD: Commands::Zeros(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:161)
+==91==    by 0x411284: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:40)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91== 212 bytes in 53 blocks are definitely lost in loss record 71 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x406AD6: MySharedPtr<Variable>::MySharedPtr() (MySharedPtr.h:28)
+==91==    by 0x411160: std::pair<std::string const, MySharedPtr<Variable> >::pair<std::string const&, 0ul>(std::tuple<std::string const&>&, std::tuple<>&, std::_Index_tuple<0ul>, std::_Index_tuple<>) (tuple:1090)
+==91==    by 0x4110DF: std::pair<std::string const, MySharedPtr<Variable> >::pair<std::string const&>(std::piecewise_construct_t, std::tuple<std::string const&>, std::tuple<>) (tuple:1079)
+==91==    by 0x4110A5: std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > >::_Rb_tree_node<std::piecewise_construct_t const&, std::tuple<std::string const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::string const&>&&, std::tuple<>&&) (stl_tree.h:140)
+==91==    by 0x410E91: _ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKSs11MySharedPtrI8VariableEEEE9constructIS8_IRKSt21piecewise_construct_tSt5tupleIIRS3_EESE_IIEEEEEvPT_DpOT0_ (new_allocator.h:120)
+==91==    by 0x410C79: _ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKSs11MySharedPtrI8VariableEEEEE12_S_constructIS7_IRKSt21piecewise_construct_tSt5tupleIIRS2_EESE_IIEEEEENSt9enable_ifIXsrNS9_18__construct_helperIT_IDpT0_EEE5valueEvE4typeERS8_PSK_DpOSL_ (alloc_traits.h:254)
+==91==    by 0x410727: _ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKSs11MySharedPtrI8VariableEEEEE9constructIS7_IRKSt21piecewise_construct_tSt5tupleIIRS2_EESE_IIEEEEEDTcl12_S_constructfp_fp0_spcl7forwardIT0_Efp1_EEERS8_PT_DpOSI_ (alloc_traits.h:393)
+==91==    by 0x40FDCE: std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > >* std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::string const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::string const&>&&, std::tuple<>&&) (stl_tree.h:406)
+==91==    by 0x40F851: std::_Rb_tree_iterator<std::pair<std::string const, MySharedPtr<Variable> > > std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::string const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >, std::piecewise_construct_t const&, std::tuple<std::string const&>&&, std::tuple<>&&) (stl_tree.h:1669)
+==91==    by 0x40F185: std::map<std::string, MySharedPtr<Variable>, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::operator[](std::string const&) (stl_map.h:465)
+==91==    by 0x40E8AD: VariablesMap::GetTmpVariable() (VariablesMap.cpp:35)
+==91==
+==91== 744 (528 direct, 216 indirect) bytes in 11 blocks are definitely lost in loss record 73 of 73
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40B5AC: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (new_allocator.h:104)
+==91==    by 0x40AE58: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (stl_vector.h:168)
+==91==    by 0x40A82B: std::vector<int, std::allocator<int> >* std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > > >(unsigned long, __gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, __gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >) (stl_vector.h:1138)
+==91==    by 0x409BCC: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator=(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&) (vector.tcc:188)
+==91==    by 0x406DDD: Matrix::Matrix(Matrix const&) (Matrix.cpp:31)
+==91==    by 0x406EB4: Matrix::Copy() const (Matrix.cpp:37)
+==91==    by 0x412F32: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:240)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==
+==91== LEAK SUMMARY:
+==91==    definitely lost: 2,080 bytes in 240 blocks
+==91==    indirectly lost: 800 bytes in 60 blocks
+==91==      possibly lost: 0 bytes in 0 blocks
+==91==    still reachable: 0 bytes in 0 blocks
+==91==         suppressed: 0 bytes in 0 blocks
+==91==
+==91== ERROR SUMMARY: 271 errors from 82 contexts (suppressed: 0 from 0)
+==91==
+==91== 1 errors in context 1 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x4134A0: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:261)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a44300 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x40CF7B: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x413466: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:261)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 1 errors in context 2 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x4134A0: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:261)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a442b0 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40CF5C: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x413466: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:261)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 1 errors in context 3 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x41343E: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:260)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a44260 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x406F37: Matrix::NumElems() const (Matrix.cpp:42)
+==91==    by 0x413404: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:260)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 1 errors in context 4 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x41343E: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:260)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a44210 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x406F18: Matrix::NumElems() const (Matrix.cpp:42)
+==91==    by 0x413404: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:260)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 1 errors in context 5 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x4133DC: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:259)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a441c0 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x40CF7B: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x4133A2: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:259)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 1 errors in context 6 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x4133DC: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:259)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a44170 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40CF5C: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x4133A2: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:259)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 1 errors in context 7 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x41448D: Commands::LinVec(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:330)
+==91==    by 0x4113A4: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:68)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402F04: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:150)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a43a80 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x40CF7B: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x4143A7: Commands::LinVec(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:330)
+==91==    by 0x4113A4: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:68)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402F04: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:150)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 1 errors in context 8 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x41448D: Commands::LinVec(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:330)
+==91==    by 0x4113A4: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:68)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402F04: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:150)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a43a30 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40CF5C: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x4143A7: Commands::LinVec(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:330)
+==91==    by 0x4113A4: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:68)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402F04: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:150)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 1 errors in context 9 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x41447C: Commands::LinVec(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:330)
+==91==    by 0x4113A4: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:68)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402F04: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:150)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a43b20 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x40CF7B: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x41442F: Commands::LinVec(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:330)
+==91==    by 0x4113A4: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:68)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402F04: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:150)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 1 errors in context 10 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x41447C: Commands::LinVec(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:330)
+==91==    by 0x4113A4: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:68)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402F04: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:150)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a43ad0 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40CF5C: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x41442F: Commands::LinVec(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:330)
+==91==    by 0x4113A4: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:68)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402F04: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:150)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 2 errors in context 11 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x4079BE: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:88)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a37380 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x406FC0: Matrix::Size() const (Matrix.cpp:48)
+==91==    by 0x40749A: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:88)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 2 errors in context 12 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x4079BE: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:88)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a37260 is 0 bytes inside a block of size 40 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x406F60: Matrix::Size() const (Matrix.cpp:46)
+==91==    by 0x40749A: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:88)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 2 errors in context 13 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x4073E5: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:84)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a36fd0 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x406F37: Matrix::NumElems() const (Matrix.cpp:42)
+==91==    by 0x4073B2: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:84)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 2 errors in context 14 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x4073E5: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:84)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a36f80 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x406F18: Matrix::NumElems() const (Matrix.cpp:42)
+==91==    by 0x4073B2: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:84)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 2 errors in context 15 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x407353: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:82)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a36f30 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x406F37: Matrix::NumElems() const (Matrix.cpp:42)
+==91==    by 0x407320: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:82)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 2 errors in context 16 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x407353: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:82)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a36ee0 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x406F18: Matrix::NumElems() const (Matrix.cpp:42)
+==91==    by 0x407320: Matrix::Conv(MySharedPtr<Variable>) const (Matrix.cpp:82)
+==91==    by 0x411C41: Commands::Conv(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:129)
+==91==    by 0x41126C: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:37)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 3 errors in context 17 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x4118B0: Commands::Size(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:114)
+==91==    by 0x411254: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:34)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a20320 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x40CF7B: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x411864: Commands::Size(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:114)
+==91==    by 0x411254: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:34)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 3 errors in context 18 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x4118B0: Commands::Size(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:114)
+==91==    by 0x411254: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:34)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a202d0 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40CF5C: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x411864: Commands::Size(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:114)
+==91==    by 0x411254: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:34)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 4 errors in context 19 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x411DF8: Commands::Zeros(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:143)
+==91==    by 0x411284: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:40)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a21e40 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x40CF7B: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x411DC7: Commands::Zeros(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:143)
+==91==    by 0x411284: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:40)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 4 errors in context 20 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x411DF8: Commands::Zeros(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:143)
+==91==    by 0x411284: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:40)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a21df0 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40CF5C: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x411DC7: Commands::Zeros(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:143)
+==91==    by 0x411284: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:40)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 11 errors in context 21 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x412FF6: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:245)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a239b0 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x40CF7B: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x412FBC: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:245)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 11 errors in context 22 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x412FF6: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:245)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a23960 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40CF5C: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x412FBC: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:245)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 12 errors in context 23 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x4139AA: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:289)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a220b0 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x41200C: Commands::Zeros(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:161)
+==91==    by 0x411284: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:40)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 12 errors in context 24 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x4139AA: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:289)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a21f30 is 0 bytes inside a block of size 40 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x411FE2: Commands::Zeros(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:161)
+==91==    by 0x411284: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:40)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 22 errors in context 25 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x4130EC: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:246)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a23a50 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x40CF7B: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x4130AF: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:246)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 22 errors in context 26 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x4130EC: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:246)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==  Address 0x5a23a00 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x40CF5C: Scalar::NumElems() const (Scalar.cpp:21)
+==91==    by 0x4130AF: Commands::SubscriptAssignment(std::vector<std::string, std::allocator<std::string> >&) (Commands.cpp:246)
+==91==    by 0x4112EA: Commands::Execute(int, std::vector<std::string, std::allocator<std::string> >&, int, int, std::string) (Commands.cpp:51)
+==91==    by 0x402F83: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:153)
+==91==    by 0x402BB2: LineParser::ParseAssignment(std::string) (LineParser.cpp:104)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 45 errors in context 27 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B41: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:56)
+==91==    by 0x405DDB: std::pair<std::string const, MySharedPtr<Variable> >::~pair() (stl_pair.h:96)
+==91==    by 0x405E05: std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > >::~_Rb_tree_node() (stl_tree.h:131)
+==91==    by 0x405E23: void __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > > >::destroy<std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > > >(std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > >*) (new_allocator.h:124)
+==91==    by 0x405D1E: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::_M_destroy_node(std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > >*) (stl_tree.h:421)
+==91==    by 0x410F37: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::_M_erase_aux(std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >) (stl_tree.h:1746)
+==91==    by 0x410DF2: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::erase[abi:cxx11](std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >) (stl_tree.h:809)
+==91==    by 0x410B9C: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::_M_erase_aux(std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >, std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >) (stl_tree.h:1760)
+==91==    by 0x4105F8: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::erase[abi:cxx11](std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >, std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >) (stl_tree.h:842)
+==91==    by 0x40F9F7: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::erase(std::string const&) (stl_tree.h:1771)
+==91==    by 0x40F252: std::map<std::string, MySharedPtr<Variable>, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::erase(std::string const&) (stl_map.h:727)
+==91==  Address 0x5a1fe00 is 0 bytes inside a block of size 16 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x403333: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:179)
+==91==    by 0x402F04: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:150)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91==
+==91== 46 errors in context 28 of 82:
+==91== Mismatched free() / delete / delete []
+==91==    at 0x4C2BCDD: free (vg_replace_malloc.c:530)
+==91==    by 0x404B51: MySharedPtr<Variable>::~MySharedPtr() (MySharedPtr.h:57)
+==91==    by 0x405DDB: std::pair<std::string const, MySharedPtr<Variable> >::~pair() (stl_pair.h:96)
+==91==    by 0x405E05: std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > >::~_Rb_tree_node() (stl_tree.h:131)
+==91==    by 0x405E23: void __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > > >::destroy<std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > > >(std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > >*) (new_allocator.h:124)
+==91==    by 0x405D1E: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::_M_destroy_node(std::_Rb_tree_node<std::pair<std::string const, MySharedPtr<Variable> > >*) (stl_tree.h:421)
+==91==    by 0x410F37: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::_M_erase_aux(std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >) (stl_tree.h:1746)
+==91==    by 0x410DF2: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::erase[abi:cxx11](std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >) (stl_tree.h:809)
+==91==    by 0x410B9C: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::_M_erase_aux(std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >, std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >) (stl_tree.h:1760)
+==91==    by 0x4105F8: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::erase[abi:cxx11](std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >, std::_Rb_tree_const_iterator<std::pair<std::string const, MySharedPtr<Variable> > >) (stl_tree.h:842)
+==91==    by 0x40F9F7: std::_Rb_tree<std::string, std::pair<std::string const, MySharedPtr<Variable> >, std::_Select1st<std::pair<std::string const, MySharedPtr<Variable> > >, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::erase(std::string const&) (stl_tree.h:1771)
+==91==    by 0x40F252: std::map<std::string, MySharedPtr<Variable>, std::less<std::string>, std::allocator<std::pair<std::string const, MySharedPtr<Variable> > > >::erase(std::string const&) (stl_map.h:727)
+==91==  Address 0x5a1fe50 is 0 bytes inside a block of size 4 alloc'd
+==91==    at 0x4C2B203: operator new(unsigned long) (vg_replace_malloc.c:334)
+==91==    by 0x404BB4: MySharedPtr<Variable>::MySharedPtr(Variable*) (MySharedPtr.h:36)
+==91==    by 0x403355: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:179)
+==91==    by 0x402F04: LineParser::ParseLine(std::string&, std::string) (LineParser.cpp:150)
+==91==    by 0x402A7F: LineParser::ParseAssignment(std::string) (LineParser.cpp:93)
+==91==    by 0x4062D8: MamatScriptEngine::Execute() (MamatScriptEngine.cpp:62)
+==91==    by 0x4058B6: main (main.cpp:16)
+==91==
+==91== ERROR SUMMARY: 271 errors from 82 contexts (suppressed: 0 from 0)
+omer@OMER:/mnt/c/Users/omer/Documents/Visual Studio 2017/Projects/hw5_/hw5_$

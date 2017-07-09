@@ -1,6 +1,10 @@
 #ifndef _MAMAT_SCRIPT_ENGINE_H_
 #define _MAMAT_SCRIPT_ENGINE_H_
 
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>
+
 #include<istream>
 #include<sstream>
 #include<string>

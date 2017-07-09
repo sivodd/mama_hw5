@@ -1,6 +1,10 @@
 #ifndef _VARIABLE_H_
 #define _VARIABLE_H_
 
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>
+
 #include<iostream>
 #include<vector>
 #include"MySharedPtr.h"

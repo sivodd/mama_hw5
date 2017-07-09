@@ -4,6 +4,9 @@
 #include"LineParser.h"
 #include"ScriptExceptions.h"
 
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>
 
 
 void ReplaceCommandByTmpVar(string& tmpVarName, vector<string>& lineSegments, int firstVarIdx, int numVars);
