@@ -1,6 +1,10 @@
 #ifndef _COMMANDS_H_
 #define _COMMANDS_H_
 
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>
+
 #include<string>
 #include"VariablesMap.h"
 

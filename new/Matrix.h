@@ -1,6 +1,10 @@
 #ifndef _MATRIX_H_
 #define _MATRIX_H_
 
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>
+
 #include"Variable.h"
 #include"Scalar.h"
 
@@ -12,6 +16,7 @@ public:
 	Matrix(int startVal, int endVal);
 	Matrix(const Matrix& rhs);
 
+	~Matrix();
     virtual VarPtr Copy()const;
     virtual VarPtr NumElems() const ;
     virtual VarPtr Size()const ;
@@ -59,7 +64,7 @@ public:
 	int rows_;
     int cols_;
     vector<IdxVec> array2D; //http://www.cplusplus.com/forum/articles/7459/
-
+	
 };
 
 

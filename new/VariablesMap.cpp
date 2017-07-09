@@ -1,5 +1,11 @@
 #include"VariablesMap.h"
 #include"ScriptExceptions.h"
+#include <algorithm>//omer
+#include<time.h> //omer
+
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>
 
 using namespace std;
 
@@ -47,8 +53,9 @@ void VariablesMap::ClearTmpVars(){
 VarPtr& VariablesMap::operator[](const string& x){
     bool flag= true;
     string s=VALID_VAR_CHARS;
+	int len = (int)x.length();
     if (isalpha(x[0])){
-        for (int i=1; i<x.length(); i++){
+        for (int i=1; i<len; i++){
             if (s.find(x[i])==string::npos) {
                 flag=false;
                 break;
@@ -68,8 +75,8 @@ VarPtr& VariablesMap::at(const string& x){
 
 void VariablesMap::erase(const string& x){
     VariablesMap_.erase(x);
-    if (find(tmp_list.begin(), tmp_list.end(), x) != tmp_list.end())//לפי האינטרנט זה לא בודק את האיבר האחרון (שלend)
-        tmp_list.remove(x);//need to erase tmp from list if it exists.
+     if (find(tmp_list.begin(), tmp_list.end(), x) != tmp_list.end())//according to the interner it doesnt check the last object
+         tmp_list.remove(x);//need to erase tmp from list if it exists.
 }
 
 

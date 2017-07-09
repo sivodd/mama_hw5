@@ -1,0 +1,24 @@
+# This is a Makefile for the MamatScript project
+CC = g++
+CXXFLAGS = -g -Wall -std=c++0x
+CXXLINK = $(CC)
+LIBS = 
+OBJS = Commands.o LineParser.o MamatScriptEngine.o Matrix.o Scalar.o Variable.o VariablesMap.o MySharedPtr.o ScriptException.o
+RM = rm -f
+# Creating the executable (MamatScript)
+MamatScript: $(OBJS)
+	$(CXXLINK) $(CXXFLAGS) -o MamatScript $(OBJS) $(LIBS)
+  
+# Creating object files using default rules
+ScriptException.o: ScriptExceptions.h
+Commands.o: Commands.cpp Commands.h VariablesMap.h Scalar.h Matrix.h LineParser.h ScriptExceptions.h
+LineParser.o: LineParser.cpp LineParser.h VariablesMap.h Commands.h LineParser.h Scalar.h Matrix.h ScriptExceptions.h
+MamatScriptEngine.o: MamatScriptEngine.cpp MamatScriptEngine.h ScriptExceptions.h VariablesMap.h LineParser.h
+Matrix.o: Matrix.h Matrix.cpp ScriptExceptions.h Variable.h Scalar.h
+MySharedPtr.o: MySharedPtr.h 
+Scalar.o: Scalar.cpp Scalar.h Matrix.h ScriptExceptions.h Variable.h
+Variable.o: Variable.cpp Variable.h ScriptExceptions.h MySharedPtr.h
+VariablesMap.o: VariablesMap.cpp VariablesMap.h ScriptExceptions.h Variable.h Scalar.h Matrix.h
+
+clean:
+	$(RM) MamatScript *.o

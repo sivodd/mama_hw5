@@ -2,6 +2,11 @@
 #include"Matrix.h"
 #include"ScriptExceptions.h"
 
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>
+
+
 using namespace std;
 
 //Scalar::Scalar(int val) : Variable(1, 1), val_(val){}
@@ -63,7 +68,8 @@ const int& Scalar::operator[](const int idx)const {
 }
 
 int& Scalar::operator[](const IdxVec v) {
-    for (int i = 0; i <v.size() ; ++i) {
+    int len = (int)v.size();
+	for (int i = 0; i <len ; ++i) {
         if (v[i]!=1)
             throw INDEX_OUT_OF_RANGE;
     }
@@ -72,7 +78,8 @@ int& Scalar::operator[](const IdxVec v) {
 
 
 const int& Scalar::operator[](const IdxVec v)const {
-	for (int i = 0; i <v.size() ; ++i) {
+	int len = (int)v.size();
+	for (int i = 0; i <len ; ++i) {
 		if (v[i]!=1)
 			throw INDEX_OUT_OF_RANGE;
 		}

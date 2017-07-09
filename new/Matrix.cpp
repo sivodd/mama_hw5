@@ -1,6 +1,9 @@
 #include"Matrix.h"
 #include"ScriptExceptions.h"
 
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>
 
 Matrix :: Matrix(int rows, int cols, int val){
 	rows_=rows;
@@ -19,8 +22,8 @@ Matrix :: Matrix(int startVal, int endVal){
 	rows_=1;
 	cols_= endVal-startVal+1;
 	array2D.resize((unsigned long)rows_);
-	for (int i = 0; i < rows_; ++i)
-		array2D[i].resize((unsigned long)cols_);
+	//for (int i = 0; i < rows_; ++i)
+	array2D[0].resize((unsigned long)cols_);
 	for (int j = 0; j < cols_ ; ++j) {
 			array2D[0][j] = startVal+j;// make sure the first val is start val.
 		}
@@ -28,7 +31,14 @@ Matrix :: Matrix(int startVal, int endVal){
 
 Matrix::Matrix(const Matrix& rhs) : Variable(rhs), rows_(rhs.rows_), cols_(rhs.cols_)
 {
-	array2D= rhs.array2D;
+	array2D= rhs.array2D; //??
+}
+
+Matrix::~Matrix() 
+{
+	//for (int i = 0; i < rows_; ++i)
+	//	delete &(array2D[i]);
+	//delete &array2D;
 }
 
 VarPtr Matrix::Copy() const {
@@ -51,8 +61,7 @@ VarPtr Matrix::Size(int dim) const {
 		throw BAD_INPUT;
 	if (dim==1)
 		return VarPtr(new Scalar(rows_));
-	if (dim==2)
-		return VarPtr(new Scalar(cols_));
+	return VarPtr(new Scalar(cols_));
 }
 
 VarPtr Matrix::Transpose() const{
@@ -112,29 +121,19 @@ VarPtr Matrix::Conv(VarPtr rhs) const
 }
 
 int& Matrix::operator[](const int idx){
-	int count=1;
-	if (idx<1 || idx<(rows_*cols_))
+	if (idx<1 || idx>(rows_*cols_)) //omer
 		throw INDEX_OUT_OF_RANGE;
-	for (int i = 0; i < cols_; ++i) {
-		for (int j = 0; j <rows_ ; ++j) {
-			if (count==idx)
-				return array2D[i][j];
-			count++;
-		}
-	}
+	int RowI = (idx - 1) % rows_;
+	int ColI = (idx - 1) / rows_;
+	return array2D[RowI][ColI];
 }
 
 const int& Matrix::operator[](const int idx) const {
-	int count=1;
-	if (idx<1 || idx<(rows_*cols_))
+	if (idx<1 || idx>(rows_*cols_)) //omer
 		throw INDEX_OUT_OF_RANGE;
-	for (int i = 0; i < cols_; ++i) {
-		for (int j = 0; j <rows_ ; ++j) {
-			if (count==idx)
-				return array2D[i][j];
-			count++;
-		}
-	}
+	int RowI = (idx - 1) % rows_;
+	int ColI = (idx - 1) / rows_;
+	return array2D[RowI][ColI];
 }
 int& Matrix::operator[](const IdxVec v) {
 	if (v.size()!=2 || v[0]>rows_ || v[0]<1 || v[1]>cols_ || v[1]<1)
@@ -189,7 +188,7 @@ VarPtr Matrix::operator*(const Scalar& s) const {
 	return VarPtr(mat);
 }
 
-VarPtr Matrix::operator*(const Matrix& m) const {
+VarPtr Matrix::operator*(const Matrix& m) const { //omer- stoped here
 	if (m.rows_ != rows_ || m.cols_ !=cols_)
 		throw BAD_MAT_PROD;
 	Matrix* new_mat = new Matrix(rows_, cols_, 0);

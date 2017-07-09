@@ -1,6 +1,10 @@
 #ifndef _MY_SHARED_PTR_H_
 #define _MY_SHARED_PTR_H_
 
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>
+
 #include <iostream>
 
 template <class T>
@@ -53,8 +57,8 @@ MySharedPtr<T>::~MySharedPtr()
     (*counter_)--;
     if (*counter_ == 0)
     {
-        free(pointer_);
-        free(counter_);
+        delete pointer_; //omer
+        delete counter_;
     }
 }
 
@@ -83,8 +87,8 @@ void MySharedPtr<T>::operator=(const MySharedPtr<T>& ptr)
     {
         (*counter_)--;
         if (counter_==0){
-            free(counter_);
-            free(pointer_);
+            delete counter_;
+            delete pointer_;
         }
         counter_ = ptr.counter_;
         (*counter_)++;
