@@ -3,10 +3,6 @@
 #include <algorithm>//omer
 #include<time.h> //omer
 
-#define _CRTDBG_MAP_ALLOC  
-#include <stdlib.h>  
-#include <crtdbg.h>
-
 using namespace std;
 
 VariablesMap::VariablesMap() {

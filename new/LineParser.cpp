@@ -4,9 +4,6 @@
 #include"Matrix.h"
 #include"ScriptExceptions.h"
 
-#define _CRTDBG_MAP_ALLOC  
-#include <stdlib.h>  
-#include <crtdbg.h>
 
 int ParseSingleCommand(const string& line, vector<string>& lineSegments, int& firstVarIdx, int& numVars);
 bool ParseFunction(const char* commName, const string& line, vector<string>& lineSegments, int& firstVarIdx, int& numVars);

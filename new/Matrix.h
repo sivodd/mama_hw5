@@ -1,10 +1,6 @@
 #ifndef _MATRIX_H_
 #define _MATRIX_H_
 
-#define _CRTDBG_MAP_ALLOC  
-#include <stdlib.h>  
-#include <crtdbg.h>
-
 #include"Variable.h"
 #include"Scalar.h"
 

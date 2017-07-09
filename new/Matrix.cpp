@@ -1,9 +1,6 @@
 #include"Matrix.h"
 #include"ScriptExceptions.h"
 
-#define _CRTDBG_MAP_ALLOC  
-#include <stdlib.h>  
-#include <crtdbg.h>
 
 Matrix :: Matrix(int rows, int cols, int val){
 	rows_=rows;

@@ -2,11 +2,6 @@
 #include"Matrix.h"
 #include"ScriptExceptions.h"
 
-#define _CRTDBG_MAP_ALLOC  
-#include <stdlib.h>  
-#include <crtdbg.h>
-
-
 using namespace std;
 
 //Scalar::Scalar(int val) : Variable(1, 1), val_(val){}

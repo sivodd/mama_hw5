@@ -3,9 +3,6 @@
 #include"MamatScriptEngine.h"
 #include"ScriptExceptions.h"
 
-#define _CRTDBG_MAP_ALLOC  
-#include <stdlib.h>  
-#include <crtdbg.h>
 
 #define BLANK_LINE 0
 #define FOR_LOOP 1

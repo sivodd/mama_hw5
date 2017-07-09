@@ -1,9 +1,6 @@
 #ifndef _LINE_PARSER_H_
 #define _LINE_PARSER_H_
 
-#define _CRTDBG_MAP_ALLOC  
-#include <stdlib.h>  
-#include <crtdbg.h>
 
 #include<string>
 #include"VariablesMap.h"

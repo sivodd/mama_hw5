@@ -1,0 +1,56 @@
+a=-1
+disp a
+numela=numel(a)
+disp numela
+b=2
+disp b
+multab=a*b
+disp multab
+addab=a+b
+disp addab
+morethanab=a<b
+disp morethanab
+equalab=a==b
+disp equalab
+andab=a&&b
+disp andab
+orab=a||b
+disp orab
+c=a<b
+disp c
+convac=conv(a,c)
+disp convac
+A=1:5
+disp A
+numelA=numel(A)
+disp numelA
+convAc=conv(A,c)
+disp convAc
+multAb=A*b
+disp multAb
+addAb=A+b
+disp addAb
+morethanAb=A<b
+disp morethanAb
+equalAb=A==b
+disp equalAb
+andAb=A&&b
+disp andAb
+orAb=A||b
+disp orAb
+B=2:6
+disp B
+transposeB=transpose(B)
+disp transposeB
+multAB=A*transposeB
+disp multAB
+addAB=A+B
+disp addAB
+morethanAB=A<B
+disp morethanAB
+equalAB=A==B
+disp equalAB
+andAB=A&&B
+disp andAB
+orAB=A||B
+disp orAB

@@ -1,0 +1,13 @@
+a=1
+disp a
+b= zeros(7)
+c= zeros(7,3)
+b(4,2:5)=-1
+disp c
+b(8)=1
+disp b
+d=size(c)
+disp d
+e=b+c
+e=b<0
+disp e
