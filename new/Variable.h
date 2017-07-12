@@ -19,15 +19,31 @@ ostream& operator<<(ostream& re, const VarPtr& var_ptr);
 
 class Variable
 {
-//protected:
-//    int rows_;
-//    int cols_;
 
 public:
 
-//	Variable(int rows, int columns);
+// *************************************************************************************
+//* Function name : Variable
+//* Description   : Default costructor - Create and allocate copy to Variable.
+//* Parameters    : None.
+//* Return value  : None.
+//*************************************************************************************
     Variable(){};
+
+// *************************************************************************************
+//* Function name : Variable
+//* Description   : Variable - Copy costructor
+//* Parameters    :VarPtr - pointer to Variable.
+//* Return value  : None.
+//*************************************************************************************
     Variable(VarPtr){};
+
+// *************************************************************************************
+//* Function name : ~Variable
+//* Description   : Destructor - Create and allocate copy to Variable.
+//* Parameters    : None.
+//* Return value  : None.
+//*************************************************************************************
 	virtual ~Variable(){};
 
 	virtual void print(ostream& ro) const=0;

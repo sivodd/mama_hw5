@@ -4,7 +4,6 @@
 
 using namespace std;
 
-//Variable::Variable(int rows, int columns) : rows_(rows), cols_(columns){};
 
 //from staff
 IdxVec operator+(const IdxVec& lhs, const IdxVec& rhs)
@@ -18,6 +17,13 @@ IdxVec operator+(const IdxVec& lhs, const IdxVec& rhs)
 	return res;
 }
 
+// *************************************************************************************
+//* Function name : Operator <<
+//* Description   : Overloads operator <<.
+//* Parameters    : Ostream& ro - reference to ostream.
+//*             	VarPtr& VarP - reference to Variable to print
+//* Return value  : ostream& - ostream reference to print Variable.
+//*************************************************************************************
 ostream& operator<<(ostream& ro, const VarPtr& var_ptr){
 	var_ptr.get()->print(ro);
 	return ro;

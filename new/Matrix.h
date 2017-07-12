@@ -8,11 +8,12 @@
 class Matrix : public Variable
 {
 public:
+
 	Matrix(int rows, int cols, int val);
 	Matrix(int startVal, int endVal);
 	Matrix(const Matrix& rhs);
-
 	~Matrix();
+
     virtual VarPtr Copy()const;
     virtual VarPtr NumElems() const ;
     virtual VarPtr Size()const ;
