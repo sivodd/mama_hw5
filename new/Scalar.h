@@ -7,8 +7,28 @@ class Scalar : public Variable
 {
 public:
 
+// *************************************************************************************
+//* Function name : Scalar
+//* Description   : Constructor
+//* Parameters    : int val
+//* Return value  : None.
+//*************************************************************************************
 	Scalar(int val) : val_(val){};
+
+// *************************************************************************************
+//* Function name : Scalar
+//* Description   : Constructor
+//* Parameters    : Scalar - ref to a scalar.
+//* Return value  : None.
+//*************************************************************************************
     Scalar(const Scalar& s);
+
+// *************************************************************************************
+//* Function name : ~Scalar
+//* Description   : Destructor
+//* Parameters    : None.
+//* Return value  : None.
+//*************************************************************************************
     ~Scalar(){};
 
 

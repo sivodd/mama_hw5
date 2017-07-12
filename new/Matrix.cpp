@@ -2,6 +2,14 @@
 #include"ScriptExceptions.h"
 
 
+// *************************************************************************************
+//* Function name : Matrix
+//* Description   : Constructor
+//* Parameters    : rows - number of rows.
+//					cols - number of columns.
+//					val - the value we make all cells in matrix
+//* Return value  : None.
+//*************************************************************************************
 Matrix :: Matrix(int rows, int cols, int val){
 	rows_=rows;
 	cols_= cols;
@@ -15,6 +23,13 @@ Matrix :: Matrix(int rows, int cols, int val){
 	}
 }
 
+// *************************************************************************************
+//* Function name : Matrix
+//* Description   : Constructor
+//* Parameters    : startVal - the smallest value in matrix.
+//					endVale - the largest value in the matrix.
+//* Return value  : None.
+//*************************************************************************************
 Matrix :: Matrix(int startVal, int endVal){
 	rows_=1;
 	cols_= endVal-startVal+1;
@@ -26,11 +41,23 @@ Matrix :: Matrix(int startVal, int endVal){
 		}
 }
 
+// *************************************************************************************
+//* Function name : Matrix
+//* Description   : Copy constructor
+//* Parameters    : Matrix& rhs - the ref matrix we want to copy.
+//* Return value  : None.
+//*************************************************************************************
 Matrix::Matrix(const Matrix& rhs) : Variable(rhs), rows_(rhs.rows_), cols_(rhs.cols_)
 {
-	array2D= rhs.array2D; //??
+	array2D= rhs.array2D;
 }
 
+// *************************************************************************************
+//* Function name : ~Matrix
+//* Description   : Destructor
+//* Parameters    : None.
+//* Return value  : None.
+//*************************************************************************************
 Matrix::~Matrix() 
 {
 	//for (int i = 0; i < rows_; ++i)
@@ -38,21 +65,45 @@ Matrix::~Matrix()
 	//delete &array2D;
 }
 
+// *************************************************************************************
+//* Function name : Copy
+//* Description   : Creates a new Matrix.
+//* Parameters    : None.
+//* Return value  : VarPtr - matrix
+//*************************************************************************************
 VarPtr Matrix::Copy() const {
 	return VarPtr(new Matrix(*this));
 }
 
+// *************************************************************************************
+//* Function name : NumElems
+//* Description   : return Matrix of Num of Elements
+//* Parameters    : None.
+//* Return value  : VarPtr - num of elements
+//*************************************************************************************
 VarPtr Matrix::NumElems() const {
 	int value=cols_*rows_;
 	return VarPtr(new Scalar(value));
 }
 
+// *************************************************************************************
+//* Function name : Size
+//* Description   : Return Matrix of dimension of the Matrix.
+//* Parameters    : None.
+//* Return value  : VarPtr - matrix of dimension of the Martix.
+//*************************************************************************************
 VarPtr Matrix::Size() const {
 	Matrix* mat= new Matrix(1,2,cols_);
 	mat->array2D[0][0]=rows_;
 	return VarPtr(mat);
 }
 
+// *************************************************************************************
+//* Function name : Size.
+//* Description   : Return Matrix of dimension of the Matrix.
+//* Parameters    : int dim - the dimension we want to know.
+//* Return value  : VarPtr - scalar of relevant dimension of the matrix.
+//*************************************************************************************
 VarPtr Matrix::Size(int dim) const {
 	if (dim>2 || dim<1)
 		throw BAD_INPUT;
@@ -61,6 +112,13 @@ VarPtr Matrix::Size(int dim) const {
 	return VarPtr(new Scalar(cols_));
 }
 
+// *************************************************************************************
+//* Function name : Transpose
+//* Description   : Returns a VarPtr to the transposed matrix
+//* Parameters    : None.
+//* Return value  : VarPtr - the transposed matrix
+//*************************************************************************************
+VarPtr Scalar::Transpose() const {
 VarPtr Matrix::Transpose() const{
 	Matrix* mat = new Matrix(cols_,rows_,0);
 	for (int i = 0; i < rows_ ; ++i) {
@@ -71,6 +129,12 @@ VarPtr Matrix::Transpose() const{
 	return VarPtr(mat);
 }
 
+// *************************************************************************************
+//* Function name : Print
+//* Description   : Prints the matrix
+//* Parameters    : Ostream& ro - reference to ostream.
+//* Return value  : None.
+//*************************************************************************************
 void Matrix::print(ostream& ro) const{
 	for (int i = 0; i <rows_ ; ++i) {
 		for (int j = 0; j < cols_; ++j) {
@@ -117,6 +181,12 @@ VarPtr Matrix::Conv(VarPtr rhs) const
 	return pRet;
 }
 
+// *************************************************************************************
+//* Function name : operator []
+//* Description   : overload operator [].
+//* Parameters    : index of the relevant element in the matrix.
+//* Return value  : int & - the value of the element in the matrix.
+//*************************************************************************************
 int& Matrix::operator[](const int idx){
 	if (idx<1 || idx>(rows_*cols_)) //omer
 		throw INDEX_OUT_OF_RANGE;
@@ -144,6 +214,12 @@ const int& Matrix::operator[](const IdxVec v) const {
 	return array2D[v[0]-1][v[1]-1];
 }
 
+// *************************************************************************************
+//* Function name : Operator +.
+//* Description   : Overloads operator +.
+//* Parameters    : Const Variable/Matrix/Scalar & rhs - the variable add to matrix.
+//* Return value  : VarPtr - Matrix/Scalar to the result of the operator.
+//*************************************************************************************
 VarPtr Matrix::operator+(const Variable& v) const {
 	return (v + *this);
 }
@@ -171,6 +247,12 @@ VarPtr Matrix::operator+(const Matrix& m) const {
 	return VarPtr(new_mat);
 }
 
+// *************************************************************************************
+//* Function name : Operator *.
+//* Description   : Overloads operator *.
+//* Parameters    : Const Variable/Matrix/Scalar & rhs - the variable multiply with matrix.
+//* Return value  : VarPtr - Matrix/Scalar to the result of the operator.
+//*************************************************************************************
 VarPtr Matrix::operator*(const Variable& v) const {
 	return (v * *this);
 }
@@ -202,6 +284,12 @@ VarPtr Matrix::operator*(const Matrix& m) const { //omer- stoped here
 	return VarPtr(new_mat);
 }
 
+// *************************************************************************************
+//* Function name : Operator <.
+//* Description   : Overloads operator <.
+//* Parameters    : Const Variable/Matrix/Scalar & rhs - the variable we compare matrix to.
+//* Return value  : VarPtr - Matrix/Scalar to the result of the operator.
+//*************************************************************************************
 VarPtr Matrix::operator<(const Variable& v) const {
 	return (v > *this);
 }
@@ -228,6 +316,12 @@ VarPtr Matrix::operator<(const Matrix& m) const {
 	return VarPtr(new_mat);
 }
 
+// *************************************************************************************
+//* Function name : Operator >.
+//* Description   : Overloads operator >.
+//* Parameters    : Const Variable/Matrix/Scalar & rhs - the variable we compare matrix to.
+//* Return value  : VarPtr - Matrix/Scalar to the result of the operator.
+//*************************************************************************************
 VarPtr Matrix::operator>(const Variable& v) const {
 	return (v < *this);
 }
@@ -255,6 +349,12 @@ VarPtr Matrix::operator>(const Matrix& m) const {
 	return VarPtr(new_mat);
 }
 
+// *************************************************************************************
+//* Function name : Operator ==.
+//* Description   : Overloads operator ==.
+//* Parameters    : Const Variable/Matrix/Scalar & rhs - the variable we compare matrix to.
+//* Return value  : VarPtr - Matrix/Scalar to the result of the operator.
+//*************************************************************************************
 VarPtr Matrix::operator==(const Variable& v) const {
 	return (v == *this);
 }
@@ -282,6 +382,12 @@ VarPtr Matrix::operator==(const Matrix& m) const {
 	return VarPtr(new_mat);
 }
 
+// *************************************************************************************
+//* Function name : Operator &&.
+//* Description   : Overloads operator &&.
+//* Parameters    : Const Variable/Matrix/Scalar & rhs - the variable we use the argument on.
+//* Return value  : VarPtr - Matrix/Scalar to the result of the operator.
+//*************************************************************************************
 VarPtr Matrix::operator&&(const Variable& v) const {
 	return (v && *this);
 }
@@ -294,6 +400,12 @@ VarPtr Matrix::operator&&(const Matrix& m) const {
 	throw BAD_INPUT;
 }
 
+// *************************************************************************************
+//* Function name : Operator ||.
+//* Description   : Overloads operator ||.
+//* Parameters    : Const Variable/Matrix/Scalar & rhs - the variable we use the argument on.
+//* Return value  : VarPtr - Matrix/Scalar to the result of the operator.
+//*************************************************************************************
 VarPtr Matrix::operator||(const Variable& v) const {
 	return (v || *this);
 }
@@ -305,3 +417,4 @@ VarPtr Matrix::operator||(const Scalar& s) const {
 VarPtr Matrix::operator||(const Matrix& m) const {
 	throw BAD_INPUT;
 }
+
