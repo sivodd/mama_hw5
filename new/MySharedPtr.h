@@ -26,7 +26,7 @@ template <class T>
 MySharedPtr<T>::MySharedPtr()
 {
     counter_ = new int;
-    *counter_ = 0;
+    *counter_ = 1;
     pointer_ = NULL;
 }
 
@@ -53,7 +53,8 @@ MySharedPtr<T>::~MySharedPtr()
     (*counter_)--;
     if (*counter_ == 0)
     {
-        delete pointer_; //omer
+		if(pointer_!=NULL)
+			delete pointer_; //omer
         delete counter_;
     }
 }
@@ -82,7 +83,7 @@ void MySharedPtr<T>::operator=(const MySharedPtr<T>& ptr)
     if (this != &ptr)
     {
         (*counter_)--;
-        if (counter_==0){
+        if (*counter_==0){
             delete counter_;
             delete pointer_;
         }

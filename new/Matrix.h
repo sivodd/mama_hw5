@@ -3,6 +3,7 @@
 
 #include"Variable.h"
 #include"Scalar.h"
+#include <typeinfo> 
 
 
 class Matrix : public Variable
