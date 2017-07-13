@@ -31,7 +31,7 @@ string VariablesMap::GetTmpVariable(){
         rnd= rand() % ceiling + floor;
         tmp=tmp + s[rnd];
     }
-    VariablesMap_[tmp]=NULL;// WE ADD THE TMP THAT WE FOUND TO THE MAP
+    VariablesMap_[tmp]=VarPtr();// WE ADD THE TMP THAT WE FOUND TO THE MAP
     tmp_list.push_back(tmp);
     return tmp;
 }
@@ -58,7 +58,6 @@ VarPtr& VariablesMap::operator[](const string& x){
             }
         }
         if (flag){
-            VariablesMap_[x] = NULL;
             return (VariablesMap_[x]);
         }
     }

@@ -25,6 +25,11 @@ IdxVec operator+(const IdxVec& lhs, const IdxVec& rhs)
 //* Return value  : ostream& - ostream reference to print Variable.
 //*************************************************************************************
 ostream& operator<<(ostream& ro, const VarPtr& var_ptr){
+	if (var_ptr.get() == NULL)
+	{
+		std::cerr << "ERROR(nullptr)";
+		return ro;
+	}
 	var_ptr.get()->print(ro);
 	return ro;
 }

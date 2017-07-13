@@ -303,3 +303,4 @@ VarPtr Scalar::operator||(const Scalar& s)const{
 VarPtr Scalar::operator||(const Matrix& m)const{
 	throw BAD_INPUT;
 }
+

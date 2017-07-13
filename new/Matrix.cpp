@@ -254,7 +254,21 @@ VarPtr Matrix::operator+(const Matrix& m) const {
 //* Return value  : VarPtr - Matrix/Scalar to the result of the operator.
 //*************************************************************************************
 VarPtr Matrix::operator*(const Variable& v) const {
-	return (v * *this);
+	if (typeid(v) == typeid(Matrix)) {
+		Matrix* m = new Matrix(cols_, rows_, 0);
+		for (int i = 0; i < cols_; i++)
+		{
+			for (int j = 0; j < rows_; j++)
+				m->array2D[i][j] = array2D[j][i];
+		}
+		
+		VarPtr result = (*((*(v.Transpose()))*(*m))).Transpose();
+		//VarPtr result = (*((*(v.Transpose()))*(*m))).Transpose();
+		delete m;
+		return result;
+		//return (*result_tran).Transpose();
+	}
+	return (v * (*this));
 }
 
 VarPtr Matrix::operator*(const Scalar& s) const {
@@ -267,15 +281,15 @@ VarPtr Matrix::operator*(const Scalar& s) const {
 	return VarPtr(mat);
 }
 
-VarPtr Matrix::operator*(const Matrix& m) const { //omer- stoped here
-	if (m.rows_ != rows_ || m.cols_ !=cols_)
+VarPtr Matrix::operator*(const Matrix& m) const { 
+	if (m.rows_ != cols_)
 		throw BAD_MAT_PROD;
-	Matrix* new_mat = new Matrix(rows_, cols_, 0);
+	Matrix* new_mat = new Matrix(rows_, m.cols_, 0);//(rows_, cols_, 0);
 	int sum=0;
 	for (int i = 0; i <new_mat->rows_ ; ++i) {
 		for (int j = 0; j <new_mat->cols_ ; ++j) {
-			for (int k = 0; k <rows_ ; ++k) {
-				sum+=m.array2D[i][k]*array2D[k][j];
+			for (int k = 0; k <m.rows_ ; ++k) {// k <rows_
+				sum+=m.array2D[k][j]*array2D[i][k];
 			}
 			new_mat->array2D[i][j]= sum;
 			sum=0;
