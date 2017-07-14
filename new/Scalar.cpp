@@ -304,3 +304,7 @@ VarPtr Scalar::operator||(const Matrix& m)const{
 	throw BAD_INPUT;
 }
 
+int Scalar::row_val() const {
+	return 0;
+}
+

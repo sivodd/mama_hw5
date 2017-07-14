@@ -60,6 +60,7 @@ public:
     virtual const int& operator[](const int idx) const = 0;
     virtual int& operator[](const IdxVec v) = 0;
     virtual const int& operator[](const IdxVec v) const = 0;
+	virtual int row_val() const = 0;
 
 	virtual VarPtr operator+(const Variable&) const = 0;//staff
 	virtual VarPtr operator+(const Scalar&) const = 0;//staff

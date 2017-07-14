@@ -22,13 +22,12 @@ using namespace std;
 
 #define UNEXPECTED(x)  ScriptException(x)
 
-class ScriptException : public exception
-{
+class ScriptException : public exception {//omer
 
 public:
     ScriptException(string str) : string_(str){};
     const char * what() const throw() { return string_.c_str();}; //c_str() returns a const char*
-
+	~ScriptException() throw () {};
 private:
     string string_;
 
