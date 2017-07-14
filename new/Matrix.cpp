@@ -118,7 +118,6 @@ VarPtr Matrix::Size(int dim) const {
 //* Parameters    : None.
 //* Return value  : VarPtr - the transposed matrix
 //*************************************************************************************
-VarPtr Scalar::Transpose() const {
 VarPtr Matrix::Transpose() const{
 	Matrix* mat = new Matrix(cols_,rows_,0);
 	for (int i = 0; i < rows_ ; ++i) {
@@ -255,18 +254,19 @@ VarPtr Matrix::operator+(const Matrix& m) const {
 //*************************************************************************************
 VarPtr Matrix::operator*(const Variable& v) const {
 	if (typeid(v) == typeid(Matrix)) {
+		if (cols_ != v.row_val())
+		{
+			throw BAD_MAT_PROD;
+		}
 		Matrix* m = new Matrix(cols_, rows_, 0);
 		for (int i = 0; i < cols_; i++)
 		{
 			for (int j = 0; j < rows_; j++)
 				m->array2D[i][j] = array2D[j][i];
 		}
-		
 		VarPtr result = (*((*(v.Transpose()))*(*m))).Transpose();
-		//VarPtr result = (*((*(v.Transpose()))*(*m))).Transpose();
 		delete m;
 		return result;
-		//return (*result_tran).Transpose();
 	}
 	return (v * (*this));
 }
@@ -431,4 +431,9 @@ VarPtr Matrix::operator||(const Scalar& s) const {
 VarPtr Matrix::operator||(const Matrix& m) const {
 	throw BAD_INPUT;
 }
+
+int Matrix::row_val() const {
+	return rows_;
+}
+
 

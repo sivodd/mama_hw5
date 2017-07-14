@@ -44,6 +44,7 @@ public:
     virtual const int& operator[](const int idx)const ;
     virtual int& operator[](const IdxVec v);
     virtual const int& operator[](const IdxVec v)const ;
+	virtual int row_val() const;
 
     virtual VarPtr operator+(const Variable&)const ;
     virtual VarPtr operator+(const Scalar&)const ;
